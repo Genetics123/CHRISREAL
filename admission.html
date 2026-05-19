@@ -1,92 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Admission - CHRISREAL EDUCATIONAL COMPLEX</title>
-  <meta name="description" content="Admissions at CHRISREAL EDUCATIONAL COMPLEX — how to apply, requirements, and fees. Kasoa, Ghana.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admissions - CHRISREAL EDUCATIONAL COMPLEX</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/images/logo.png" alt="CHRISREAL logo" class="logo">
-        <div class="brand-text">
-          <h1>CHRISREAL EDUCATIONAL COMPLEX</h1>
-        </div>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <nav id="main-nav" class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="life.html">Life at School</a>
-        <a href="admission.html" class="active">Admission</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+  <!-- Paste same navbar here with active link on Admissions -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="Chrisreal Logo">
+        <span>CHRISREAL</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="life.html">School Life</a></li>
+        <li><a href="admission.html" class="active">Admissions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="btn-primary" onclick="window.location.href='admission.html'">Apply Now</button>
+    </div>
+  </nav>
+
+  <header class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('../assets/images/hero.jpg') center/cover;">
+    <div class="hero-content">
+      <h1>Admissions Open 2026/2027</h1>
+      <p>Secure your child's future today</p>
     </div>
   </header>
 
-  <main class="container">
-    <h2>Admissions</h2>
-    <p>We welcome applications for Nursery through Junior High. Follow the steps below to apply.</p>
-
-    <section class="admission-steps">
-      <ol>
-        <li>Complete the online application form below.</li>
-        <li>Submit copies of birth certificate and previous school records (if any).</li>
-        <li>Attend an assessment or interview if required.</li>
+  <section style="padding: 5rem 0;">
+    <div class="container">
+      <h2>Admission Process</h2>
+      <ol style="font-size:1.1rem; line-height:2;">
+        <li>Submit Application Form</li>
+        <li>Entrance Assessment (KG - JHS)</li>
+        <li>Interview with Parents</li>
+        <li>Offer Letter & Fee Payment</li>
       </ol>
-    </section>
 
-    <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <label>Child Full Name
-        <input type="text" name="child_name" required>
-      </label>
+      <form style="margin-top: 3rem; max-width: 700px;">
+        <input type="text" placeholder="Child's Full Name" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+        <input type="text" placeholder="Parent/Guardian Name" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+        <input type="email" placeholder="Email Address" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+        <input type="tel" placeholder="Phone Number" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+        <button type="submit" class="btn-primary" style="width:100%; padding:16px;">Submit Application</button>
+      </form>
+    </div>
+  </section>
 
-      <label>Date of Birth
-        <input type="date" name="dob" required>
-      </label>
-
-      <label>Applying For Grade
-        <select name="grade" required>
-          <option value="">Select grade</option>
-          <option>Nursery</option>
-          <option>KG</option>
-          <option>Primary 1</option>
-          <option>Primary 2</option>
-          <option>Primary 3</option>
-          <option>Primary 4</option>
-          <option>Primary 5</option>
-          <option>Primary 6</option>
-          <option>JHS</option>
-        </select>
-      </label>
-
-      <label>Parent / Guardian Name
-        <input type="text" name="parent_name" required>
-      </label>
-
-      <label>Contact Phone
-        <input type="tel" name="phone" required>
-      </label>
-
-      <label>Email
-        <input type="email" name="email" required>
-      </label>
-
-      <label>Message
-        <textarea name="message" rows="4"></textarea>
-      </label>
-
-      <button class="btn primary" type="submit">Submit Application</button>
-    </form>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana</div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX - Kasoa, Ghana. All Rights Reserved.</p>
+    </div>
   </footer>
-  <script src="assets/js/main.js" defer></script>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
