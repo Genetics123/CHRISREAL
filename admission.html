@@ -27,45 +27,70 @@
     </div>
   </nav>
 
-  <header class="hero" style="height:65vh; background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)), url('../assets/images/hero.jpg') center/cover;">
+  <header class="hero" style="height:65vh; background: linear-gradient(rgba(10,37,64,0.82), rgba(10,37,64,0.82)), url('../assets/images/hero.jpg') center/cover;">
     <div class="hero-content">
       <h1>Admissions 2026/2027</h1>
-      <p>Secure your child’s place in one of Kasoa’s finest schools</p>
+      <p>Secure your child’s future at CHRISREAL Educational Complex</p>
     </div>
   </header>
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Simple Admission Process</h2>
-      <div class="tiles-grid">
-        <div class="tile">
-          <div class="tile-content">
-            <h3>01. Application</h3>
-            <p>Fill the online form or visit the school</p>
+      <div class="form-container">
+        <h2>Application Form</h2>
+        
+        <form>
+          <div class="form-group">
+            <label>Child's Full Name</label>
+            <input type="text" required>
           </div>
-        </div>
-        <div class="tile">
-          <div class="tile-content">
-            <h3>02. Assessment</h3>
-            <p>Age-appropriate entrance assessment</p>
-          </div>
-        </div>
-        <div class="tile">
-          <div class="tile-content">
-            <h3>03. Interview</h3>
-            <p>Parent & child interview</p>
-          </div>
-        </div>
-      </div>
 
-      <div style="max-width: 700px; margin: 60px auto 0;">
-        <h2 style="text-align:center; margin-bottom:30px;">Apply Online</h2>
-        <form style="background:#f8f9fa; padding:40px; border-radius:20px;">
-          <input type="text" placeholder="Child's Full Name" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
-          <input type="text" placeholder="Parent/Guardian Name" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
-          <input type="email" placeholder="Email Address" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
-          <input type="tel" placeholder="Phone Number" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
-          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:20px; padding:18px;">Submit Application</button>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div class="form-group">
+              <label>Date of Birth</label>
+              <input type="date" required>
+            </div>
+            <div class="form-group">
+              <label>Applying For Grade</label>
+              <select required>
+                <option value="">Select Grade</option>
+                <option>KG 1</option>
+                <option>KG 2</option>
+                <option>Primary 1 - 6</option>
+                <option>JHS 1 - 3</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Parent/Guardian Full Name</label>
+            <input type="text" required>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Current School (if any)</label>
+            <input type="text">
+          </div>
+
+          <div class="form-group">
+            <label>Additional Message / Questions</label>
+            <textarea rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; padding:18px; font-size:1.2rem;">
+            Submit Application
+          </button>
         </form>
       </div>
     </div>
@@ -76,6 +101,7 @@
       <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana</p>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
