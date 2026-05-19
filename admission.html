@@ -7,10 +7,69 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <style>
+    /* Additional Form Styles - Strong & Clean */
+    .form-container {
+      background: white;
+      padding: 50px 40px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      max-width: 780px;
+      margin: 40px auto;
+    }
+
+    .form-group {
+      margin-bottom: 28px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #0a2540;
+      font-size: 1.05rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #c9a227;
+      box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15);
+      outline: none;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .form-container {
+        padding: 35px 20px;
+        margin: 20px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-  
-  <!-- ==================== NAVBAR ==================== -->
+
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="container">
       <div class="logo">
@@ -18,7 +77,6 @@
         <span>CHRISREAL</span>
       </div>
       
-      <!-- Desktop Menu -->
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -31,7 +89,6 @@
       <button class="hamburger" id="hamburger">☰</button>
     </div>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -44,35 +101,35 @@
     </div>
   </nav>
 
-  <!-- ==================== HERO ==================== -->
-  <header class="hero" style="height: 65vh; min-height: 500px;">
+  <!-- Hero -->
+  <header class="hero" style="height: 60vh; min-height: 480px;">
     <div class="hero-content">
       <h1>Admissions 2026/2027</h1>
-      <p>Secure your child's future at CHRISREAL Educational Complex</p>
+      <p>Join Ghana's Premier Educational Complex in Kasoa</p>
     </div>
   </header>
 
-  <!-- ==================== ADMISSION FORM ==================== -->
+  <!-- Form Section -->
   <section class="section">
     <div class="container">
-      <div class="form-container" style="max-width: 750px;">
-        <h2 class="section-title" style="margin-bottom: 40px;">Application Form</h2>
+      <div class="form-container">
+        <h2 style="text-align: center; margin-bottom: 40px; color: #0a2540;">Student Application Form</h2>
         
         <form>
           <div class="form-group">
-            <label>Child's Full Name *</label>
-            <input type="text" required>
+            <label>Child's Full Name <span style="color:red;">*</span></label>
+            <input type="text" placeholder="Enter full name" required>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="form-row">
             <div class="form-group">
-              <label>Date of Birth *</label>
+              <label>Date of Birth <span style="color:red;">*</span></label>
               <input type="date" required>
             </div>
             <div class="form-group">
-              <label>Grade Applying For *</label>
+              <label>Grade Applying For <span style="color:red;">*</span></label>
               <select required>
-                <option value="">Select Grade</option>
+                <option value="">-- Select Grade --</option>
                 <option>KG 1</option>
                 <option>KG 2</option>
                 <option>Primary 1</option>
@@ -89,32 +146,32 @@
           </div>
 
           <div class="form-group">
-            <label>Parent / Guardian Full Name *</label>
-            <input type="text" required>
+            <label>Parent / Guardian Full Name <span style="color:red;">*</span></label>
+            <input type="text" placeholder="Parent or Guardian name" required>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="form-row">
             <div class="form-group">
-              <label>Phone Number *</label>
+              <label>Phone Number <span style="color:red;">*</span></label>
               <input type="tel" placeholder="+233 XX XXX XXXX" required>
             </div>
             <div class="form-group">
-              <label>Email Address *</label>
-              <input type="email" required>
+              <label>Email Address <span style="color:red;">*</span></label>
+              <input type="email" placeholder="your@email.com" required>
             </div>
           </div>
 
           <div class="form-group">
             <label>Current School (if any)</label>
-            <input type="text">
+            <input type="text" placeholder="Current school name">
           </div>
 
           <div class="form-group">
-            <label>Additional Information / Questions</label>
-            <textarea rows="5" placeholder="Any special needs, questions, or comments..."></textarea>
+            <label>Additional Message / Special Needs</label>
+            <textarea rows="5" placeholder="Any information you would like us to know..."></textarea>
           </div>
 
-          <button type="submit" class="btn-primary" style="width: 100%; padding: 18px; font-size: 1.1rem; margin-top: 20px;">
+          <button type="submit" class="btn-primary" style="width:100%; padding: 18px; font-size: 1.15rem;">
             Submit Application
           </button>
         </form>
@@ -124,7 +181,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Central Region, Ghana</p>
+      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana</p>
     </div>
   </footer>
 
