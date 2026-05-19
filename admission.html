@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admission - Chrisreal International School</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-link" href="index.html">Chrisreal International School</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="life.html">Life at School</a>
+        <a href="admission.html" class="active">Admission</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Admissions</h2>
+    <p>Complete the form below to start your application. We will contact you with next steps.</p>
+
+    <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>Child Full Name
+        <input type="text" name="child_name" required>
+      </label>
+
+      <label>Date of Birth
+        <input type="date" name="dob" required>
+      </label>
+
+      <label>Applying For Grade
+        <select name="grade" required>
+          <option value="">Select grade</option>
+          <option>Nursery</option>
+          <option>KG</option>
+          <option>Primary 1</option>
+          <option>Primary 2</option>
+          <option>JHS</option>
+        </select>
+      </label>
+
+      <label>Parent / Guardian Name
+        <input type="text" name="parent_name" required>
+      </label>
+
+      <label>Contact Phone
+        <input type="tel" name="phone" required>
+      </label>
+
+      <label>Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>Message
+        <textarea name="message" rows="4"></textarea>
+      </label>
+
+      <button class="btn" type="submit">Submit Application</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">Chrisreal International School • Accra</div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
