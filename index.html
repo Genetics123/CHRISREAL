@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Chrisreal International School</title>
+  <title>CHRISREAL EDUCATIONAL COMPLEX</title>
+  <meta name="description" content="Chrisreal International School — safe campus, experienced teachers, holistic programs. Enrol now.">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/images/logo.png" alt="Chrisreal International School logo" class="logo">
+      <a class="brand" href="index.html" aria-label="Chrisreal International School home">
+        <img src="assets/images/logo.png" alt="Chrisreal logo" class="logo">
         <div class="brand-text">
-          <h1>Chrisreal International School</h1>
+          <h1>Chrisreal Educational complex</h1>
           <p class="tagline">Safe campus • Experienced teachers</p>
         </div>
-      </div>
+      </a>
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
 
-      <nav id="main-nav" class="main-nav">
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="life.html">Life at School</a>
@@ -31,76 +32,95 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h2>Welcome to Chrisreal International School</h2>
-          <p>We provide a safe, nurturing environment and experienced teachers who inspire lifelong learning.</p>
-          <a class="btn" href="admission.html">Apply Now</a>
+    <section class="hero container" id="home">
+      <div class="hero-left">
+        <h2>Welcome to <span class="accent">Chrisreal Educational Complex</span></h2>
+        <p class="lead">A safe, nurturing environment with experienced teachers who inspire lifelong learning.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="admission.html">Apply Now</a>
+          <a class="btn ghost" href="about.html">Our Mission</a>
         </div>
-        <div class="hero-image">
-          <img src="assets/images/hero.jpg" alt="Chrisreal campus">
-        </div>
+        <ul class="trust-list" aria-hidden="true">
+          <li><strong>Secure campus</strong></li>
+          <li><strong>Qualified teachers</strong></li>
+          <li><strong>Holistic programs</strong></li>
+        </ul>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <img src="assets/images/hero.jpg" alt="Chrisreal campus" class="hero-image">
       </div>
     </section>
 
-    <section class="highlights container">
-      <article>
-        <img src="assets/images/group.jpg" alt="Students group photo">
-        <h3>Safe Campus</h3>
-        <p>Secure facilities, trained staff, and a caring community.</p>
-      </article>
-      <article>
-        <img src="assets/images/teachers.jpg" alt="Teachers group photo">
-        <h3>Experienced Teachers</h3>
-        <p>Qualified educators focused on each child’s growth.</p>
-      </article>
-      <article>
-        <img src="assets/images/gallery-1.jpg" alt="Classroom activity">
-        <h3>Holistic Programs</h3>
-        <p>Balanced academics, sports, and arts for whole-child development.</p>
-      </article>
+    <section class="features container" aria-labelledby="features-heading">
+      <h3 id="features-heading" class="section-title">What makes us different</h3>
+      <div class="tiles">
+        <article class="tile" tabindex="0" aria-labelledby="t1">
+          <img src="assets/images/group.jpg" alt="" class="tile-media" aria-hidden="true">
+          <div class="tile-body">
+            <h4 id="t1">Safe Campus</h4>
+            <p>Secure facilities, trained staff, and a caring community focused on student wellbeing.</p>
+          </div>
+        </article>
+
+        <article class="tile" tabindex="0" aria-labelledby="t2">
+          <img src="assets/images/teachers.jpg" alt="" class="tile-media" aria-hidden="true">
+          <div class="tile-body">
+            <h4 id="t2">Experienced Teachers</h4>
+            <p>Qualified educators who personalise learning and support each child’s growth.</p>
+          </div>
+        </article>
+
+        <article class="tile" tabindex="0" aria-labelledby="t3">
+          <img src="assets/images/gallery-1.jpg" alt="" class="tile-media" aria-hidden="true">
+          <div class="tile-body">
+            <h4 id="t3">Holistic Programs</h4>
+            <p>Balanced academics, sports, and arts for whole‑child development and confidence.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="about-preview container">
-      <div>
+    <section class="cards container">
+      <div class="card about-card">
         <h3>About Us</h3>
-        <p>Chrisreal International School is committed to academic excellence and student wellbeing. Learn more about our mission and values.</p>
-        <a href="about.html" class="link">Read more</a>
+        <p>Chrisreal International School is committed to academic excellence and student wellbeing. Our curriculum blends strong fundamentals with creative learning.</p>
+        <a class="link" href="about.html">Read more</a>
       </div>
-      <div>
+
+      <div class="card admission-card">
         <h3>Admissions</h3>
-        <p>Open enrollment for all grades. Start your application online today.</p>
-        <a href="admission.html" class="link">Apply</a>
+        <p>Open enrollment for all grades. Start your application online — we’ll guide you through the process.</p>
+        <a class="btn primary" href="admission.html">Apply</a>
       </div>
     </section>
 
-    <section class="gallery-preview container">
-      <h3>Campus Gallery</h3>
-      <div class="grid">
-        <a href="gallery.html"><img src="assets/images/gallery-1.jpg" alt="Gallery image 1"></a>
-        <a href="gallery.html"><img src="assets/images/gallery-2.jpg" alt="Gallery image 2"></a>
-        <a href="gallery.html"><img src="assets/images/gallery-3.jpg" alt="Gallery image 3"></a>
+    <section class="gallery-preview container" aria-labelledby="gallery-heading">
+      <h3 id="gallery-heading" class="section-title">Campus Gallery</h3>
+      <div class="gallery-grid">
+        <a href="assets/images/gallery-1.jpg"><img src="assets/images/gallery-1.jpg" alt="Classroom activity"></a>
+        <a href="assets/images/gallery-2.jpg"><img src="assets/images/gallery-2.jpg" alt="Sports day"></a>
+        <a href="assets/images/gallery-3.jpg"><img src="assets/images/gallery-3.jpg" alt="Art class"></a>
+        <a href="assets/images/gallery-4.jpg"><img src="assets/images/gallery-4.jpg" alt="School event"></a>
       </div>
-      <a class="btn-outline" href="gallery.html">View Gallery</a>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <div>
         <strong>Chrisreal International School</strong>
-        <p>Accra, Ghana • +233 24X XXX XXX</p>
+        <p>Kasoa, Ghana • +233 24X XXX XXX • info@chrisreal.edu.gh</p>
       </div>
-      <nav class="footer-nav">
-        <a href="index.html">Home</a>
+      <div class="footer-links">
         <a href="contact.html">Contact</a>
-        <a href="admission.html">Admission</a>
-      </nav>
+        <a href="admission.html">Admissions</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
     </div>
     <div class="copyright">© <span id="year"></span> Chrisreal International School</div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
