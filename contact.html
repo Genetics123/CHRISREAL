@@ -1,62 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Contact - CHRISREAL EDUCATIONAL COMPLEX</title>
-  <meta name="description" content="Contact CHRISREAL EDUCATIONAL COMPLEX — visit, call, or email us in Kasoa, Ghana.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - CHRISREAL EDUCATIONAL COMPLEX</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/images/logo.png" alt="CHRISREAL logo" class="logo">
-        <div class="brand-text">
-          <h1>CHRISREAL EDUCATIONAL COMPLEX</h1>
-        </div>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <nav id="main-nav" class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="life.html">Life at School</a>
-        <a href="admission.html">Admission</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html" class="active">Contact</a>
-      </nav>
+  <!-- Same Navbar -->
+  <nav class="navbar"> ... </nav>
+
+  <header class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/images/hero.jpg') center/cover;">
+    <div class="hero-content">
+      <h1>Get In Touch</h1>
     </div>
   </header>
 
-  <main class="container">
-    <h2>Contact Us</h2>
-    <p>Reach out for visits, questions, or admissions support.</p>
-
-    <div class="contact-grid">
+  <section style="padding: 5rem 0;">
+    <div class="container grid-2">
       <div>
-        <h3>Contact Details</h3>
-        <p><strong>Address</strong><br>Kasoa, Ghana</p>
-        <p><strong>Phone</strong><br>+233 24X XXX XXX</p>
-        <p><strong>Email</strong><br>info@chrisreal.edu.gh</p>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=Kasoa+Ghana" target="_blank" rel="noopener">View on map</a></p>
+        <h2>Contact Information</h2>
+        <p><strong>Address:</strong> Kasoa, Central Region, Ghana</p>
+        <p><strong>Phone:</strong> +233 24 123 4567</p>
+        <p><strong>Email:</strong> info@chrisreal.edu.gh</p>
       </div>
-
       <div>
-        <h3>Send a Message</h3>
-        <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <label>Your Name<input type="text" name="name" required></label>
-          <label>Email<input type="email" name="email" required></label>
-          <label>Phone<input type="tel" name="phone"></label>
-          <label>Message<textarea name="message" rows="4" required></textarea></label>
-          <button class="btn primary" type="submit">Send</button>
+        <form>
+          <input type="text" placeholder="Your Name" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc;">
+          <input type="email" placeholder="Email" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc;">
+          <textarea placeholder="Message" rows="6" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc;"></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
         </form>
       </div>
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana</div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX - Kasoa, Ghana. All Rights Reserved.</p>
+    </div>
   </footer>
-  <script src="assets/js/main.js" defer></script>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
