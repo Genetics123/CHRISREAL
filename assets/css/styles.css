@@ -15,13 +15,13 @@ body {
   color: #333;
 }
 
-/* NAVBAR */
+/* ==================== NAVBAR ==================== */
 .navbar {
   background: #0a2540;
   position: sticky;
   top: 0;
   z-index: 1200;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .navbar .container {
@@ -31,6 +31,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
@@ -46,6 +47,7 @@ body {
   margin-right: 10px;
 }
 
+/* Desktop Navigation */
 .nav-links {
   display: flex;
   list-style: none;
@@ -56,7 +58,9 @@ body {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1.05rem;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:after {
@@ -67,7 +71,7 @@ body {
   bottom: -6px;
   left: 0;
   background: var(--accent);
-  transition: width 0.3s;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover:after,
@@ -83,6 +87,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 5px;
 }
 
 /* Mobile Menu */
@@ -95,6 +100,7 @@ body {
   background: #0a2540;
   padding: 25px 0;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 1300;
 }
 
 .mobile-menu.active {
@@ -103,7 +109,7 @@ body {
 
 .mobile-menu .nav-links {
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.6rem;
   padding: 0 25px;
 }
 
@@ -115,6 +121,7 @@ body {
   border-radius: 50px;
   font-weight: 700;
   text-decoration: none;
+  transition: all 0.4s ease;
 }
 
 .btn-secondary {
@@ -125,23 +132,37 @@ body {
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
+  transition: all 0.4s ease;
 }
 
-/* HERO & SECTIONS */
+/* ==================== HERO ==================== */
 .hero {
   height: 100vh;
   min-height: 580px;
-  background: linear-gradient(rgba(10,37,64,0.78), rgba(10,37,64,0.78)), url('../assets/images/hero.jpg') center/cover;
+  background: linear-gradient(rgba(10,37,64,0.78), rgba(10,37,64,0.78)), 
+              url('../assets/images/hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   color: white;
   text-align: center;
 }
 
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .hero-content h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.6rem;
+  font-size: 3.8rem;
   line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
 }
 
 .hero-buttons {
@@ -149,19 +170,156 @@ body {
   gap: 18px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
-/* Other Styles */
-.section { padding: 90px 0; }
+/* ==================== SECTIONS & TILES ==================== */
+.section {
+  padding: 90px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3.5rem;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+}
+
 .tiles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-/* Responsive */
+.tile {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+.tile:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.tile img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.tile-content {
+  padding: 28px;
+}
+
+.tile h3 {
+  font-size: 1.55rem;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+/* ==================== PROFESSIONAL FORM STYLING ==================== */
+.form-container {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  max-width: 780px;
+  margin: 40px auto;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #0a2540;
+  font-size: 1.05rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15);
+  outline: none;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: 0.4s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  background: #0a2540;
+  color: white;
+  text-align: center;
+  padding: 3rem 20px;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
 @media (max-width: 992px) {
-  .nav-links { display: none; }
-  .hamburger { display: block; }
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 35px 20px;
+    margin: 20px 15px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
 }
