@@ -1,98 +1,298 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHRISREAL EDUCATIONAL COMPLEX | Kasoa</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
-<body>
-  
-  <!-- ==================== NAVBAR ==================== -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo">
-        <img src="assets/images/logo.png" alt="Chrisreal Logo">
-        <span>CHRISREAL</span>
-      </div>
-      
-      <!-- Desktop Menu -->
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="life.html">School Life</a></li>
-        <li><a href="admission.html">Admissions</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      <button class="hamburger" id="hamburger">☰</button>
-    </div>
+:root {
+  --primary: #0a2540;
+  --accent: #c9a227;
+}
 
-    <!-- MOBILE MENU - THIS MUST BE PRESENT -->
-    <div class="mobile-menu" id="mobileMenu">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="life.html">School Life</a></li>
-        <li><a href="admission.html">Admissions</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Excellence in Education.<br>Character in Every Child.</h1>
-      <p>A premier international-standard school in Kasoa, Ghana.</p>
-      
-      <div class="hero-buttons">
-        <a href="admission.html" class="btn-primary">Join Our Family</a>
-        <a href="about.html" class="btn-secondary">Learn Our Story</a>
-      </div>
-    </div>
-  </header>
+/* ==================== NAVBAR ==================== */
+.navbar {
+  background: #0a2540;
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
 
-  <!-- Why Choose Us -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Why Choose CHRISREAL</h2>
-      <div class="tiles-grid">
-        <div class="tile">
-          <img src="assets/images/teachers.jpg" alt="Teachers">
-          <div class="tile-content">
-            <h3>World-Class Faculty</h3>
-            <p>Experienced and dedicated teachers.</p>
-          </div>
-        </div>
-        <div class="tile">
-          <img src="assets/images/group.jpg" alt="Campus">
-          <div class="tile-content">
-            <h3>Modern Campus</h3>
-            <p>State-of-the-art facilities.</p>
-          </div>
-        </div>
-        <div class="tile">
-          <img src="assets/images/gallery-1.jpg" alt="Activities">
-          <div class="tile-content">
-            <h3>Holistic Development</h3>
-            <p>Academics, sports & character building.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+.navbar .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana</p>
-    </div>
-  </footer>
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
 
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+.logo img {
+  height: 55px;
+  margin-right: 10px;
+}
+
+/* Desktop Navigation */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.4rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -6px;
+  left: 0;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover:after,
+.nav-links a.active:after {
+  width: 100%;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* ==================== MOBILE MENU ==================== */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #0a2540;
+  padding: 30px 0 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 1300;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu .nav-links {
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 0 25px;
+}
+
+.mobile-menu .nav-links a {
+  color: white;
+  font-size: 1.25rem;
+  padding: 10px 0;
+  display: block;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: #0a2540;
+  padding: 13px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2.5px solid white;
+  padding: 13px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+/* ==================== HERO ==================== */
+.hero {
+  height: 100vh;
+  min-height: 580px;
+  background: linear-gradient(rgba(10,37,64,0.78), rgba(10,37,64,0.78)), 
+              url('../assets/images/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+/* ==================== SECTIONS & TILES ==================== */
+.section {
+  padding: 90px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3.5rem;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+}
+
+.tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tile {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+.tile:hover {
+  transform: translateY(-12px);
+}
+
+.tile img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.tile-content {
+  padding: 28px;
+}
+
+/* Form Styling */
+.form-container {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  max-width: 780px;
+  margin: 40px auto;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #0a2540;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1.05rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(201,162,39,0.15);
+  outline: none;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+/* Footer */
+footer {
+  background: #0a2540;
+  color: white;
+  text-align: center;
+  padding: 3rem 20px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 35px 20px;
+    margin: 20px 15px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+}
