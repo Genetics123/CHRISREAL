@@ -504,3 +504,20 @@ footer {
     font-size: 2rem;
   }
 }
+/* Active page link */
+.nav-links a.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Mobile active link */
+.mobile-menu .nav-links a.active {
+  background: rgba(201, 162, 39, 0.12);
+  border-left: 4px solid var(--accent);
+  padding-left: 14px;
+  border-radius: 6px;
+}
