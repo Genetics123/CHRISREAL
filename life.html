@@ -1,52 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Life at School - CHRISREAL EDUCATIONAL COMPLEX</title>
-  <meta name="description" content="Life at CHRISREAL EDUCATIONAL COMPLEX — clubs, sports, arts, and daily routines. Kasoa, Ghana.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Life - CHRISREAL EDUCATIONAL COMPLEX</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/images/logo.png" alt="CHRISREAL logo" class="logo">
-        <div class="brand-text">
-          <h1>CHRISREAL EDUCATIONAL COMPLEX</h1>
-        </div>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <nav id="main-nav" class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="life.html" class="active">Life at School</a>
-        <a href="admission.html">Admission</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+  <nav class="navbar"> <!-- Same navbar as above --> 
+    <!-- Paste the full navbar code from index.html here -->
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="Chrisreal Logo">
+        <span>CHRISREAL</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="life.html" class="active">School Life</a></li>
+        <li><a href="admission.html">Admissions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="btn-primary" onclick="window.location.href='admission.html'">Apply Now</button>
+    </div>
+  </nav>
+
+  <header class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/images/teachers.jpg') center/cover;">
+    <div class="hero-content">
+      <h1>Life at CHRISREAL</h1>
     </div>
   </header>
 
-  <main class="container">
-    <h2>Life at CHRISREAL</h2>
-    <p>Our school day balances academics with activities that build confidence, teamwork, and creativity.</p>
+  <section class="features" style="padding: 5rem 0;">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:3rem;">What Makes Us Different</h2>
+      <div class="grid-2">
+        <div class="card"><i class="fas fa-book"></i><h3>Academic Excellence</h3><p>Cambridge & Ghana Curriculum</p></div>
+        <div class="card"><i class="fas fa-futbol"></i><h3>Sports & Games</h3><p>Football, Athletics, Volleyball & more</p></div>
+        <div class="card"><i class="fas fa-paint-brush"></i><h3>Arts & Culture</h3><p>Music, Dance, Drama & Creative Arts</p></div>
+        <div class="card"><i class="fas fa-flask"></i><h3>STEM Education</h3><p>Robotics, Coding & Science Labs</p></div>
+      </div>
+    </div>
+  </section>
 
-    <section class="activities-grid">
-      <article><h3>Clubs</h3><p>Drama, STEM, Debate, and more — guided by staff and student leaders.</p></article>
-      <article><h3>Sports</h3><p>Football, athletics, and inter-school competitions with structured coaching.</p></article>
-      <article><h3>Arts</h3><p>Music, visual arts, and performances that celebrate student creativity.</p></article>
-    </section>
-
-    <section class="daily-routine">
-      <h3>Daily Routine</h3>
-      <p>Structured lessons, supervised breaks, enrichment periods, and pastoral care ensure a safe and productive day.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana</div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX - Kasoa, Ghana. All Rights Reserved.</p>
+    </div>
   </footer>
-  <script src="assets/js/main.js" defer></script>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
