@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Navbar (copy from index.html and change active) -->
   <nav class="navbar">
     <div class="container">
       <div class="logo">
@@ -18,37 +18,42 @@
       </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
         <li><a href="life.html">School Life</a></li>
         <li><a href="admission.html">Admissions</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="btn-primary" onclick="window.location.href='admission.html'">Apply Now</button>
+      <a href="admission.html" class="btn btn-primary">Apply Now</a>
     </div>
   </nav>
 
-  <header class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/images/group.jpg') center/cover;">
+  <header class="hero" style="height:65vh; background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)), url('../assets/images/group.jpg') center/cover;">
     <div class="hero-content">
-      <h1>About CHRISREAL</h1>
-      <p>Shaping Tomorrow's Leaders Since 2015</p>
+      <h1>Our Story & Vision</h1>
     </div>
   </header>
 
-  <section class="about-teaser" style="padding: 5rem 0;">
+  <section class="section">
     <div class="container">
-      <div class="grid-2">
-        <div>
-          <h2>Our Story</h2>
-          <p>CHRISREAL Educational Complex was founded with a vision to provide world-class education in Kasoa and its environs. We combine academic excellence with strong moral values to develop well-rounded individuals.</p>
-          <p>Our modern campus, experienced faculty, and child-centered approach have made us one of the fastest-growing schools in the Central Region.</p>
+      <div class="tiles-grid">
+        <div class="tile">
+          <div class="tile-content">
+            <h3>Founded with Purpose</h3>
+            <p>Established to provide world-class education with strong moral foundations in Kasoa and beyond.</p>
+          </div>
         </div>
-        <div>
-          <h2>Vision & Mission</h2>
-          <h3>Vision</h3>
-          <p>To be a leading institution recognized for academic excellence and character formation.</p>
-          <h3>Mission</h3>
-          <p>To nurture confident, innovative, and morally upright learners who will positively impact society.</p>
+        <div class="tile">
+          <div class="tile-content">
+            <h3>Vision</h3>
+            <p>To be the leading educational institution producing confident, innovative, and ethical leaders.</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="tile-content">
+            <h3>Mission</h3>
+            <p>Nurturing every child to achieve academic excellence while building character and leadership skills.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -56,10 +61,9 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX - Kasoa, Ghana. All Rights Reserved.</p>
+      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana</p>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>
