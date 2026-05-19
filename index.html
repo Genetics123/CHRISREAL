@@ -1,65 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - CHRISREAL EDUCATIONAL COMPLEX</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CHRISREAL EDUCATIONAL COMPLEX</title>
+  <meta name="description" content="CHRISREAL EDUCATIONAL COMPLEX — Safe campus, experienced teachers, holistic programs. Kasoa, Ghana.">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo">
-        <img src="assets/images/logo.png" alt="Chrisreal Logo">
-        <span>CHRISREAL</span>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="life.html">School Life</a></li>
-        <li><a href="admission.html">Admissions</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <button class="btn-primary" onclick="window.location.href='admission.html'">Apply Now</button>
-    </div>
-  </nav>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="CHRISREAL EDUCATIONAL COMPLEX home">
+        <img src="assets/images/logo.png" alt="CHRISREAL logo" class="logo">
+        <div class="brand-text">
+          <h1>CHRISREAL EDUCATIONAL COMPLEX</h1>
+          <p class="tagline">Safe campus • Experienced teachers</p>
+        </div>
+      </a>
 
-  <header class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/images/group.jpg') center/cover;">
-    <div class="hero-content">
-      <h1>About CHRISREAL</h1>
-      <p>Shaping Tomorrow's Leaders Since 2015</p>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="life.html">Life at School</a>
+        <a href="admission.html">Admission</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <section class="about-teaser" style="padding: 5rem 0;">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <h2>Our Story</h2>
-          <p>CHRISREAL Educational Complex was founded with a vision to provide world-class education in Kasoa and its environs. We combine academic excellence with strong moral values to develop well-rounded individuals.</p>
-          <p>Our modern campus, experienced faculty, and child-centered approach have made us one of the fastest-growing schools in the Central Region.</p>
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-left">
+        <h2>Welcome to <span class="accent">CHRISREAL EDUCATIONAL COMPLEX</span></h2>
+        <p class="lead">A safe, nurturing environment in Kasoa where experienced teachers inspire curiosity, character, and academic excellence.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="admission.html">Apply Now</a>
+          <a class="btn ghost" href="about.html">Our Mission</a>
         </div>
-        <div>
-          <h2>Vision & Mission</h2>
-          <h3>Vision</h3>
-          <p>To be a leading institution recognized for academic excellence and character formation.</p>
-          <h3>Mission</h3>
-          <p>To nurture confident, innovative, and morally upright learners who will positively impact society.</p>
-        </div>
+        <ul class="trust-list" aria-hidden="true">
+          <li><strong>Secure campus</strong></li>
+          <li><strong>Qualified teachers</strong></li>
+          <li><strong>Holistic programs</strong></li>
+        </ul>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <img src="assets/images/hero.jpg" alt="CHRISREAL campus" class="hero-image">
+      </div>
+    </section>
+
+    <section class="features container" aria-labelledby="features-heading">
+      <h3 id="features-heading" class="section-title">What makes us different</h3>
+      <div class="tiles">
+        <article class="tile" tabindex="0" aria-labelledby="t1">
+          <img src="assets/images/group.jpg" alt="" class="tile-media" aria-hidden="true">
+          <div class="tile-body">
+            <h4 id="t1">Safe Campus</h4>
+            <p>Secure facilities, trained staff, and a caring community focused on student wellbeing.</p>
+          </div>
+        </article>
+
+        <article class="tile" tabindex="0" aria-labelledby="t2">
+          <img src="assets/images/teachers.jpg" alt="" class="tile-media" aria-hidden="true">
+          <div class="tile-body">
+            <h4 id="t2">Experienced Teachers</h4>
+            <p>Qualified educators who personalise learning and support each child’s growth.</p>
+          </div>
+        </article>
+
+        <article class="tile" tabindex="0" aria-labelledby="t3">
+          <img src="assets/images/gallery-1.jpg" alt="" class="tile-media" aria-hidden="true">
+          <div class="tile-body">
+            <h4 id="t3">Holistic Programs</h4>
+            <p>Balanced academics, sports, and arts for whole‑child development and confidence.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cards container">
+      <div class="card about-card">
+        <h3>About Us</h3>
+        <p>CHRISREAL EDUCATIONAL COMPLEX is committed to academic excellence and student wellbeing. Our curriculum blends strong fundamentals with creative learning and character development.</p>
+        <a class="link" href="about.html">Read more</a>
+      </div>
+
+      <div class="card admission-card">
+        <h3>Admissions</h3>
+        <p>Open enrollment for all grades. Start your application online — we’ll guide you through the process and answer your questions.</p>
+        <a class="btn primary" href="admission.html">Apply</a>
+      </div>
+    </section>
+
+    <section class="gallery-preview container" aria-labelledby="gallery-heading">
+      <h3 id="gallery-heading" class="section-title">Campus Gallery</h3>
+      <div class="gallery-grid">
+        <a href="assets/images/gallery-1.jpg"><img src="assets/images/gallery-1.jpg" alt="Classroom activity"></a>
+        <a href="assets/images/gallery-2.jpg"><img src="assets/images/gallery-2.jpg" alt="Sports day"></a>
+        <a href="assets/images/gallery-3.jpg"><img src="assets/images/gallery-3.jpg" alt="Art class"></a>
+        <a href="assets/images/gallery-4.jpg"><img src="assets/images/gallery-4.jpg" alt="School event"></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>
+        <strong>CHRISREAL EDUCATIONAL COMPLEX</strong>
+        <p>Kasoa, Ghana • +233 24X XXX XXX • info@chrisreal.edu.gh</p>
+      </div>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="admission.html">Admissions</a>
+        <a href="privacy.html">Privacy</a>
       </div>
     </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX - Kasoa, Ghana. All Rights Reserved.</p>
-    </div>
+    <div class="copyright">© <span id="year"></span> CHRISREAL EDUCATIONAL COMPLEX</div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
