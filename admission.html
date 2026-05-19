@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-  <!-- Paste same navbar here with active link on Admissions -->
   <nav class="navbar">
     <div class="container">
       <div class="logo">
@@ -18,49 +17,65 @@
       </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="life.html">School Life</a></li>
         <li><a href="admission.html" class="active">Admissions</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="btn-primary" onclick="window.location.href='admission.html'">Apply Now</button>
+      <a href="admission.html" class="btn btn-primary">Apply Now</a>
     </div>
   </nav>
 
-  <header class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('../assets/images/hero.jpg') center/cover;">
+  <header class="hero" style="height:65vh; background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)), url('../assets/images/hero.jpg') center/cover;">
     <div class="hero-content">
-      <h1>Admissions Open 2026/2027</h1>
-      <p>Secure your child's future today</p>
+      <h1>Admissions 2026/2027</h1>
+      <p>Secure your child’s place in one of Kasoa’s finest schools</p>
     </div>
   </header>
 
-  <section style="padding: 5rem 0;">
+  <section class="section">
     <div class="container">
-      <h2>Admission Process</h2>
-      <ol style="font-size:1.1rem; line-height:2;">
-        <li>Submit Application Form</li>
-        <li>Entrance Assessment (KG - JHS)</li>
-        <li>Interview with Parents</li>
-        <li>Offer Letter & Fee Payment</li>
-      </ol>
+      <h2 class="section-title">Simple Admission Process</h2>
+      <div class="tiles-grid">
+        <div class="tile">
+          <div class="tile-content">
+            <h3>01. Application</h3>
+            <p>Fill the online form or visit the school</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="tile-content">
+            <h3>02. Assessment</h3>
+            <p>Age-appropriate entrance assessment</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="tile-content">
+            <h3>03. Interview</h3>
+            <p>Parent & child interview</p>
+          </div>
+        </div>
+      </div>
 
-      <form style="margin-top: 3rem; max-width: 700px;">
-        <input type="text" placeholder="Child's Full Name" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
-        <input type="text" placeholder="Parent/Guardian Name" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
-        <input type="email" placeholder="Email Address" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
-        <input type="tel" placeholder="Phone Number" style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
-        <button type="submit" class="btn-primary" style="width:100%; padding:16px;">Submit Application</button>
-      </form>
+      <div style="max-width: 700px; margin: 60px auto 0;">
+        <h2 style="text-align:center; margin-bottom:30px;">Apply Online</h2>
+        <form style="background:#f8f9fa; padding:40px; border-radius:20px;">
+          <input type="text" placeholder="Child's Full Name" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+          <input type="text" placeholder="Parent/Guardian Name" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+          <input type="email" placeholder="Email Address" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+          <input type="tel" placeholder="Phone Number" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:20px; padding:18px;">Submit Application</button>
+        </form>
+      </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX - Kasoa, Ghana. All Rights Reserved.</p>
+      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana</p>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>
