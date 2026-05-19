@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-  <nav class="navbar"> <!-- Same navbar as above --> 
-    <!-- Paste the full navbar code from index.html here -->
+  <nav class="navbar">
     <div class="container">
       <div class="logo">
         <img src="assets/images/logo.png" alt="Chrisreal Logo">
@@ -18,40 +17,57 @@
       </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="life.html" class="active">School Life</a></li>
         <li><a href="admission.html">Admissions</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <button class="btn-primary" onclick="window.location.href='admission.html'">Apply Now</button>
+      <a href="admission.html" class="btn btn-primary">Apply Now</a>
     </div>
   </nav>
 
-  <header class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/images/teachers.jpg') center/cover;">
+  <header class="hero" style="height:65vh; background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)), url('../assets/images/group.jpg') center/cover no-repeat;">
     <div class="hero-content">
       <h1>Life at CHRISREAL</h1>
+      <p>Where learning meets joy, growth, and discovery</p>
     </div>
   </header>
 
-  <section class="features" style="padding: 5rem 0;">
+  <section class="section">
     <div class="container">
-      <h2 style="text-align:center; margin-bottom:3rem;">What Makes Us Different</h2>
-      <div class="grid-2">
-        <div class="card"><i class="fas fa-book"></i><h3>Academic Excellence</h3><p>Cambridge & Ghana Curriculum</p></div>
-        <div class="card"><i class="fas fa-futbol"></i><h3>Sports & Games</h3><p>Football, Athletics, Volleyball & more</p></div>
-        <div class="card"><i class="fas fa-paint-brush"></i><h3>Arts & Culture</h3><p>Music, Dance, Drama & Creative Arts</p></div>
-        <div class="card"><i class="fas fa-flask"></i><h3>STEM Education</h3><p>Robotics, Coding & Science Labs</p></div>
+      <h2 class="section-title">Beyond Academics</h2>
+      <div class="tiles-grid">
+        <div class="tile">
+          <img src="assets/images/teachers.jpg" alt="Academics">
+          <div class="tile-content">
+            <h3>Academic Excellence</h3>
+            <p>Cambridge-based curriculum blended with Ghanaian standards. Small class sizes for individual attention.</p>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="assets/images/gallery-1.jpg" alt="Sports">
+          <div class="tile-content">
+            <h3>Sports & Athletics</h3>
+            <p>Football, basketball, athletics, volleyball, and swimming for physical fitness and teamwork.</p>
+          </div>
+        </div>
+        <div class="tile">
+          <img src="assets/images/gallery-2.jpg" alt="Arts">
+          <div class="tile-content">
+            <h3>Arts & Creativity</h3>
+            <p>Music, dance, drama, painting, and cultural activities to nurture creativity.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX - Kasoa, Ghana. All Rights Reserved.</p>
+      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Central Region, Ghana</p>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>
