@@ -9,29 +9,60 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-  <!-- Same Navbar -->
-  <nav class="navbar"> ... </nav>
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="Chrisreal Logo">
+        <span>CHRISREAL</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="life.html">School Life</a></li>
+        <li><a href="admission.html">Admissions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="admission.html" class="btn btn-primary">Apply Now</a>
+    </div>
+  </nav>
 
-  <header class="hero" style="height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/images/hero.jpg') center/cover;">
+  <header class="hero" style="height:65vh; background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)), url('../assets/images/hero.jpg') center/cover;">
     <div class="hero-content">
-      <h1>Get In Touch</h1>
+      <h1>Get In Touch With Us</h1>
     </div>
   </header>
 
-  <section style="padding: 5rem 0;">
-    <div class="container grid-2">
-      <div>
-        <h2>Contact Information</h2>
-        <p><strong>Address:</strong> Kasoa, Central Region, Ghana</p>
-        <p><strong>Phone:</strong> +233 24 123 4567</p>
-        <p><strong>Email:</strong> info@chrisreal.edu.gh</p>
+  <section class="section">
+    <div class="container">
+      <div class="tiles-grid">
+        <div class="tile">
+          <div class="tile-content">
+            <h3>📍 Visit Us</h3>
+            <p>Kasoa, Central Region<br>Ghana</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="tile-content">
+            <h3>📞 Call Us</h3>
+            <p>+233 24 123 4567<br>+233 20 987 6543</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="tile-content">
+            <h3>✉️ Email Us</h3>
+            <p>info@chrisreal.edu.gh<br>admissions@chrisreal.edu.gh</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <form>
-          <input type="text" placeholder="Your Name" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc;">
-          <input type="email" placeholder="Email" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc;">
-          <textarea placeholder="Message" rows="6" style="width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc;"></textarea>
-          <button type="submit" class="btn-primary">Send Message</button>
+
+      <div style="max-width: 700px; margin: 60px auto 0;">
+        <h2 style="text-align:center; margin-bottom:30px;">Send Us a Message</h2>
+        <form style="background:#f8f9fa; padding:40px; border-radius:20px;">
+          <input type="text" placeholder="Your Name" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+          <input type="email" placeholder="Email Address" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+          <textarea placeholder="Your Message" rows="6" style="width:100%; padding:14px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%; padding:18px;">Send Message</button>
         </form>
       </div>
     </div>
@@ -39,10 +70,9 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX - Kasoa, Ghana. All Rights Reserved.</p>
+      <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana • All Rights Reserved</p>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>
