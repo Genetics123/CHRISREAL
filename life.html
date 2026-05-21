@@ -10,36 +10,53 @@
 </head>
 <body>
 <nav class="navbar">
+
   <div class="container">
+
+    <!-- Logo -->
     <div class="logo">
       <img src="image/chrisreallogo.jpg" alt="Chrisreal International School Logo">
       <span>CHRISREAL</span>
     </div>
-    
-    <ul class="nav-links">
+
+    <!-- Desktop Menu -->
+    <ul class="nav-links desktop-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-     <li><a href="life.html" class="active">School Life</a></li>
+      <li><a href="life.html"  class="active">School Life</a></li>
       <li><a href="admission.html">Admissions</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" >Contact</a></li>
     </ul>
 
-    <button class="hamburger" id="hamburger">☰</button>
-    
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger">
+      ☰
+    </button>
+
   </div>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul class="nav-links">
+  <!-- Overlay -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Mobile Side Panel -->
+  <div class="mobile-panel" id="mobilePanel">
+
+    <button class="close-menu" id="closeMenu">
+      ✕
+    </button>
+
+    <ul class="mobile-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-     <li><a href="life.html" class="active">School Life</a></li>
+      <li><a href="life.html">School Life</a></li>
       <li><a href="admission.html">Admissions</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
+
   </div>
+
 </nav>
 
   <header class="hero" style="height:100vh; background: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('image/school.jpg') center/cover no-repeat;">
