@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
+
 <!-- ==================== NAVBAR ==================== -->
 <nav class="navbar">
   <div class="container">
@@ -16,7 +17,7 @@
       <img src="image/chrisreallogo.jpg" alt="Chrisreal International School Logo">
       <span>CHRISREAL</span>
     </div>
-    
+
     <!-- Desktop Menu -->
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -27,60 +28,72 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
-    <button class="hamburger" id="hamburger">☰</button>
-  </div>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About Us</a></li>
-      <li><a href="life.html">School Life</a></li>
-      <li><a href="admission.html">Admissions</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
 </nav>
 
-<header class="hero" style="height:65vh; 
-  background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)), 
+<!-- MOBILE PANEL — matches the ID main.js expects -->
+<div class="mobile-panel" id="mobilePanel">
+  <button class="close-menu" id="closeMenu" aria-label="Close menu">&#x2715;</button>
+  <ul class="mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="life.html">School Life</a></li>
+    <li><a href="admission.html">Admissions</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<!-- OVERLAY — clicking it closes the menu -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero" style="height:65vh;
+  background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)),
   url('image/about.jpg') center/cover no-repeat;">
   <div class="hero-content">
-    <h1>Our Story & Vision</h1>
+    <h1>Our Story &amp; Vision</h1>
   </div>
 </header>
 
+<!-- ==================== TILES ==================== -->
 <section class="section">
   <div class="container">
     <div class="tiles-grid">
+
       <div class="tile">
         <div class="tile-content">
           <h3>Founded with Purpose</h3>
-          <p>Established To Provide World-Class Education With Strong Moral Foundations In Kasoa And Beyond.</p>
+          <p>Established to provide world-class education with strong moral foundations in Kasoa and beyond.</p>
         </div>
       </div>
+
       <div class="tile">
         <div class="tile-content">
           <h3>Vision</h3>
-          <p>To Rise Morally Upright Leaders.</p>
+          <p>To raise morally upright leaders.</p>
         </div>
       </div>
+
       <div class="tile">
         <div class="tile-content">
           <h3>Mission</h3>
-          <p>To Provide Quality And Excellent Education That Meets International Standard And To Develop Children Into Critical And Analytical Thinkers</p>
+          <p>To provide quality and excellent education that meets international standards and to develop children into critical and analytical thinkers.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- ==================== FOOTER ==================== -->
 <footer>
   <div class="container">
-    <p>&copy; 2026 CHRISREAL EDUCATIONAL COMPLEX • Kasoa, Ghana</p>
+    <p>&copy; <span id="year"></span> CHRISREAL EDUCATIONAL COMPLEX &bull; Kasoa, Ghana</p>
   </div>
 </footer>
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>
