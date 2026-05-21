@@ -35,24 +35,29 @@ document.addEventListener('DOMContentLoaded', () => {
      MODERN MOBILE MENU
   ========================= */
 
-  const hamburger = document.getElementById('hamburger');
-  const mobilePanel = document.getElementById('mobilePanel');
-  const menuOverlay = document.getElementById('menuOverlay');
-  const closeMenu = document.getElementById('closeMenu');
+  const hamburger  = document.getElementById('hamburger');
+  const mobilePanel =
+        document.getElementById('mobilePanel') ||
+        document.getElementById('mobileMenu');          /* fallback for about.html */
+  const menuOverlay = document.getElementById('menuOverlay') || null;
+  const closeMenu   = document.getElementById('closeMenu')   || null;
 
   let lastFocusedElement = null;
-  let menuIsOpen = false; // FIX: guard flag prevents duplicate open/close calls
+  let menuIsOpen = false;
 
   function openMenu() {
 
-    if (!mobilePanel || !menuOverlay) return;
-    if (menuIsOpen) return; // FIX: prevent double-open corrupting listener state
+    if (!mobilePanel) return;
+    if (menuIsOpen) return;
 
     menuIsOpen = true;
     lastFocusedElement = document.activeElement;
 
     mobilePanel.classList.add('active');
-    menuOverlay.classList.add('active');
+
+    if (menuOverlay) {
+      menuOverlay.classList.add('active');
+    }
 
     document.body.style.overflow = 'hidden';
 
@@ -67,13 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeMobileMenu() {
 
-    if (!mobilePanel || !menuOverlay) return;
-    if (!menuIsOpen) return; // FIX: prevent ghost-close from removing listener prematurely
+    if (!mobilePanel) return;
+    if (!menuIsOpen) return;
 
     menuIsOpen = false;
 
     mobilePanel.classList.remove('active');
-    menuOverlay.classList.remove('active');
+
+    if (menuOverlay) {
+      menuOverlay.classList.remove('active');
+    }
 
     document.body.style.overflow = '';
 
@@ -103,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!focusable.length) return;
 
       const first = focusable[0];
-      const last = focusable[focusable.length - 1];
+      const last  = focusable[focusable.length - 1];
 
       if (e.shiftKey && document.activeElement === first) {
 
@@ -135,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* RESET MENU ON DESKTOP */
-  // FIX: route through closeMobileMenu() so the guard flag resets correctly
   window.addEventListener('resize', () => {
 
     if (window.innerWidth >= 993 && menuIsOpen) {
@@ -221,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeBtn = document.createElement('button');
 
-    closeBtn.type = 'button';
+    closeBtn.type      = 'button';
     closeBtn.innerText = '✕';
 
     Object.assign(closeBtn.style, {
@@ -358,10 +365,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const hp = document.createElement('input');
 
-      hp.type = 'text';
-      hp.name = '_honeypot';
+      hp.type          = 'text';
+      hp.name          = '_honeypot';
       hp.style.display = 'none';
-      hp.tabIndex = -1;
+      hp.tabIndex      = -1;
 
       form.prepend(hp);
     }
@@ -394,8 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!status) {
 
-        status = document.createElement('div');
-
+        status           = document.createElement('div');
         status.className = 'form-status';
 
         Object.assign(status.style, {
@@ -407,8 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form.appendChild(status);
       }
 
-      status.textContent =
-        'Sending your application — please wait.';
+      status.textContent = 'Sending your application — please wait.';
 
       setTimeout(() => {
 
