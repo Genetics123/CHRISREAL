@@ -521,3 +521,107 @@ footer {
   padding-left: 14px;
   border-radius: 6px;
 }
+
+/* Hide mobile panel by default */
+.mobile-panel {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  max-width: 85%;
+  height: 100vh;
+  background: #0a2540;
+  z-index: 1500;
+  padding: 30px 25px;
+  transition: right 0.4s ease;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+  overflow-y: auto;
+}
+
+/* Show only when active */
+.mobile-panel.active {
+  right: 0;
+}
+
+/* Overlay hidden by default */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.35s ease;
+  z-index: 1400;
+}
+
+/* Show overlay when active */
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile links */
+.mobile-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 20px;
+}
+
+.mobile-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 12px 14px;
+  display: block;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.mobile-links a:hover,
+.mobile-links a.active {
+  background: rgba(201, 162, 39, 0.15);
+  color: #c9a227;
+}
+
+/* Close button */
+.close-menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
+
+/* =========================
+   DESKTOP / MOBILE CONTROL
+========================= */
+
+/* Desktop */
+@media (min-width: 993px) {
+
+  .hamburger,
+  .mobile-panel,
+  .menu-overlay {
+    display: none !important;
+  }
+
+  .desktop-menu {
+    display: flex;
+  }
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
