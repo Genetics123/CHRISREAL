@@ -41,11 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeMenu = document.getElementById('closeMenu');
 
   let lastFocusedElement = null;
+  let menuIsOpen = false; // FIX: guard flag prevents duplicate open/close calls
 
   function openMenu() {
 
     if (!mobilePanel || !menuOverlay) return;
+    if (menuIsOpen) return; // FIX: prevent double-open corrupting listener state
 
+    menuIsOpen = true;
     lastFocusedElement = document.activeElement;
 
     mobilePanel.classList.add('active');
@@ -65,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeMobileMenu() {
 
     if (!mobilePanel || !menuOverlay) return;
+    if (!menuIsOpen) return; // FIX: prevent ghost-close from removing listener prematurely
+
+    menuIsOpen = false;
 
     mobilePanel.classList.remove('active');
     menuOverlay.classList.remove('active');
@@ -129,19 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* RESET MENU ON DESKTOP */
+  // FIX: route through closeMobileMenu() so the guard flag resets correctly
   window.addEventListener('resize', () => {
 
-    if (window.innerWidth >= 993) {
-
-      if (mobilePanel) {
-        mobilePanel.classList.remove('active');
-      }
-
-      if (menuOverlay) {
-        menuOverlay.classList.remove('active');
-      }
-
-      document.body.style.overflow = '';
+    if (window.innerWidth >= 993 && menuIsOpen) {
+      closeMobileMenu();
     }
   });
 
