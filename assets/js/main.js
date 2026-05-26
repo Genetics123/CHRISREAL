@@ -1,5 +1,5 @@
 /**
- * assets/js/tiles-upgrade.js
+ * tiles-upgrade.js
  * CHRISREAL INTERNATIONAL SCHOOL — Tile Enhancement
  * Purely additive — adds scroll-reveal + animated stat counters.
  * Does NOT redefine anything in main.js.
