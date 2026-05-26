@@ -3,49 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHRISREAL INTERNATIONAL SCHOOL</title>
+  <title>CHRISREAL INTERNATIONAL SCHOOLL</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="image/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
-  <link rel="manifest" href="image/site.webmanifest">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="image/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+<link rel="manifest" href="image/site.webmanifest">
+  
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-  <!-- Existing stylesheet — untouched -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Tile enhancement styles — additive only -->
-  <link rel="stylesheet" href="tiles-upgrade.css">
 </head>
 <body>
-
-<!-- ==================== NAVBAR (unchanged) ==================== -->
+<!-- ==================== NAVBAR ==================== -->
 <nav class="navbar">
+
   <div class="container">
+
+    <!-- Logo -->
     <div class="logo">
       <img src="image/chrisreallogo.jpg" alt="Chrisreal International School Logo">
       <span>CHRISREAL INT. SCHOOL</span>
     </div>
+
+    <!-- Desktop Menu -->
     <ul class="nav-links desktop-menu">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html"  class="active">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="life.html">School Life</a></li>
       <li><a href="admission.html">Admissions</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" >Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger">☰</button>
+
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger">
+      ☰
+    </button>
+
   </div>
+
+  <!-- Overlay -->
   <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Mobile Side Panel -->
   <div class="mobile-panel" id="mobilePanel">
-    <button class="close-menu" id="closeMenu">✕</button>
+
+    <button class="close-menu" id="closeMenu">
+      ✕
+    </button>
+
     <ul class="mobile-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -54,10 +63,12 @@
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
   </div>
+
 </nav>
 
-<!-- ==================== HERO (unchanged) ==================== -->
+<!-- ==================== HERO ==================== -->
 <header class="hero" style="height:100vh; background: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('image/background.jpg') center/cover no-repeat;">
   <div class="hero-content">
     <h1>Welcome to CHRISREAL INTERNATIONAL SCHOOL</h1>
@@ -65,142 +76,42 @@
   </div>
 </header>
 
-<!-- ==================== UPGRADED FEATURES SECTION ==================== -->
-<section class="section features-section" id="features">
+<!-- ==================== FEATURES ==================== -->
+<section class="section">
   <div class="container">
-
-    <!-- Section Header -->
-    <div class="features-header">
-      <span class="features-eyebrow">Why Choose Us</span>
-      <h2 class="section-title">Where Excellence Begins</h2>
-      <p class="features-subtitle">
-        A world-class environment designed to unlock every child's potential — academically, creatively, and socially.
-      </p>
-    </div>
-
-    <!-- Tiles Grid -->
-    <div class="tiles-grid tiles-grid--upgraded">
-
-      <!-- Tile 1 — Faculty -->
-      <article class="tile tile--upgraded" data-tile="1" tabindex="0">
-        <div class="tile__media">
-          <img src="image/academic.jpg" alt="World-Class Faculty" loading="lazy">
-          <div class="tile__media-overlay"></div>
-          <div class="tile__number" aria-hidden="true">01</div>
+    <div class="tiles-grid">
+      <div class="tile">
+  <img src="image/academic.jpg" alt="Academics" style="width:100%; height:auto; object-fit:contain; border-radius:12px;">
+  <div class="tile-content">
+    <h3>World-Class Faculty</h3>
+    <p>Experienced and dedicated teachers.</p>
+  </div>
+</div>
+      <div class="tile">
+        <img src="image/campus.jpg" alt="Academics" style="width:100%; height:auto; object-fit:contain; border-radius:12px;">
+        <div class="tile-content">
+          <h3>Modern Campus</h3>
+          <p>State-of-the-art facilities.</p>
         </div>
-        <div class="tile__body">
-          <div class="tile__icon-wrap">
-            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-          </div>
-          <div class="tile__text">
-            <span class="tile__tag">Academic Excellence</span>
-            <h3 class="tile__title">World-Class Faculty</h3>
-            <p class="tile__desc">
-              Our seasoned educators bring passion and mastery into every classroom — nurturing curiosity, critical thinking, and a lifelong love of learning.
-            </p>
-          </div>
-          <a href="about.html" class="tile__cta" aria-label="Learn more about our faculty">
-            <span>Learn More</span>
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div class="tile__shine" aria-hidden="true"></div>
-      </article>
-
-      <!-- Tile 2 — Campus (featured/large) -->
-      <article class="tile tile--upgraded tile--featured" data-tile="2" tabindex="0">
-        <div class="tile__media">
-          <img src="image/campus.jpg" alt="Modern Campus" loading="lazy">
-          <div class="tile__media-overlay"></div>
-          <div class="tile__number" aria-hidden="true">02</div>
-          <div class="tile__badge">
-            <i class="fa-solid fa-star" aria-hidden="true"></i>
-            Featured
-          </div>
-        </div>
-        <div class="tile__body">
-          <div class="tile__icon-wrap">
-            <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
-          </div>
-          <div class="tile__text">
-            <span class="tile__tag">Infrastructure</span>
-            <h3 class="tile__title">Modern Campus</h3>
-            <p class="tile__desc">
-              State-of-the-art classrooms, science labs, a fully stocked library, and sports facilities that inspire greatness both inside and outside the classroom.
-            </p>
-          </div>
-          <a href="about.html" class="tile__cta" aria-label="Explore our campus">
-            <span>Explore Campus</span>
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div class="tile__shine" aria-hidden="true"></div>
-      </article>
-
-      <!-- Tile 3 — Holistic -->
-      <article class="tile tile--upgraded" data-tile="3" tabindex="0">
-        <div class="tile__media">
-          <img src="image/event.jpg" alt="Holistic Development" loading="lazy">
-          <div class="tile__media-overlay"></div>
-          <div class="tile__number" aria-hidden="true">03</div>
-        </div>
-        <div class="tile__body">
-          <div class="tile__icon-wrap">
-            <i class="fa-solid fa-seedling" aria-hidden="true"></i>
-          </div>
-          <div class="tile__text">
-            <span class="tile__tag">Student Growth</span>
-            <h3 class="tile__title">Holistic Development</h3>
-            <p class="tile__desc">
-              From athletics and arts to leadership programmes — we cultivate well-rounded individuals who are ready to thrive in an ever-changing world.
-            </p>
-          </div>
-          <a href="life.html" class="tile__cta" aria-label="Learn about school life">
-            <span>School Life</span>
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div class="tile__shine" aria-hidden="true"></div>
-      </article>
-
-    </div><!-- /.tiles-grid -->
-
-    <!-- Stats Bar -->
-    <div class="stats-bar" aria-label="School statistics">
-      <div class="stats-bar__item">
-        <span class="stats-bar__num" data-count="500">0</span><span class="stats-bar__num-suffix">+</span>
-        <span class="stats-bar__label">Students Enrolled</span>
       </div>
-      <div class="stats-bar__divider" aria-hidden="true"></div>
-      <div class="stats-bar__item">
-        <span class="stats-bar__num" data-count="40">0</span><span class="stats-bar__num-suffix">+</span>
-        <span class="stats-bar__label">Qualified Teachers</span>
-      </div>
-      <div class="stats-bar__divider" aria-hidden="true"></div>
-      <div class="stats-bar__item">
-        <span class="stats-bar__num" data-count="15">0</span><span class="stats-bar__num-suffix">+</span>
-        <span class="stats-bar__label">Years of Excellence</span>
-      </div>
-      <div class="stats-bar__divider" aria-hidden="true"></div>
-      <div class="stats-bar__item">
-        <span class="stats-bar__num" data-count="98">0</span><span class="stats-bar__num-suffix">%</span>
-        <span class="stats-bar__label">Pass Rate</span>
+      <div class="tile">
+        <img src="image/event.jpg" alt="Activites" style="width:100%; height:auto; object-fit:contain; border-radius:12px;">
+        <div class="tile-content">
+          <h3>Holistic Development</h3>
+          <p>Academics, sports & character building.</p>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ==================== FOOTER (unchanged) ==================== -->
+<!-- ==================== FOOTER ==================== -->
 <footer>
   <div class="container">
     <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL • Obom Road, Kasoa, Ghana</p>
   </div>
 </footer>
 
-<!-- Existing JS — untouched -->
-<script src="main.js"></script>
-<!-- Tile enhancement JS — additive only -->
-<script src="assets/js/tiles-upgrade.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
