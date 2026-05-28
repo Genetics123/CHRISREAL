@@ -1,219 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admissions - CHRISREAL INTERNATIONAL SCHOOL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions | CHRISREAL INTERNATIONAL SCHOOL</title>
 
-  <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="image/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
-<link rel="manifest" href="image/site.webmanifest">
-  
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  
-  <style>
-    /* Additional Form Styles - Strong & Clean */
-    .form-container {
-      background: white;
-      padding: 50px 40px;
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-      max-width: 780px;
-      margin: 40px auto;
-    }
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+    <link rel="manifest" href="image/site.webmanifest">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Iconography -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --brand-primary: #0a2540;
+            --brand-primary-dark: #06182c;
+            --brand-primary-light: #133b63;
+            --brand-accent: #c9a227;
+            --brand-accent-hover: #e0b62d;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --radius-premium: 1.5rem;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -5px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
 
-    .form-group {
-      margin-bottom: 28px;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .form-group label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: 600;
-      color: #0a2540;
-      font-size: 1.05rem;
-    }
+        html { scroll-behavior: smooth; }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 16px 20px;
-      border: 2px solid #e2e8f0;
-      border-radius: 12px;
-      font-size: 1.05rem;
-      transition: all 0.3s;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: #c9a227;
-      box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.15);
-      outline: none;
-    }
+        /* --- Premium Navbar --- */
+        .navbar {
+            background: rgba(10, 37, 64, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1200;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
+        .navbar.scrolled { background: rgba(10, 37, 64, 0.98); padding: 0.5rem 0; box-shadow: var(--shadow-premium); }
 
-    @media (max-width: 768px) {
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-      .form-container {
-        padding: 35px 20px;
-        margin: 20px 15px;
-      }
-    }
-  </style>
+        .navbar .container {
+            width: min(92%, 1400px);
+            margin: auto;
+            padding: 1.25rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex; align-items: center; gap: 0.75rem;
+            color: white; font-weight: 800; font-size: 1.5rem;
+            text-decoration: none;
+        }
+        .logo img { height: 50px; border-radius: 50%; border: 2px solid var(--brand-accent); }
+
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8); text-decoration: none;
+            font-weight: 600; font-size: 0.9375rem; transition: var(--transition);
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--brand-accent); }
+
+        .portal-btn {
+            background: var(--brand-accent); color: var(--brand-primary) !important;
+            padding: 0.75rem 1.5rem !important; border-radius: 99px;
+            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
+        }
+
+        /* --- Hero --- */
+        .hero-sub {
+            height: 60vh;
+            background: linear-gradient(rgba(10,37,64,0.75), rgba(10,37,64,0.6)), url('image/admission.jpg') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 0 1.5rem;
+        }
+        .hero-sub h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1); }
+
+        @keyframes heroReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Form Section --- */
+        .section { padding: 6rem 0; }
+        .container { width: min(92%, 1000px); margin: auto; }
+
+        .admission-engine-card {
+            background: white; border-radius: 2rem;
+            box-shadow: var(--shadow-hover); border: 1px solid rgba(0,0,0,0.03);
+            overflow: hidden; animation: cardReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes cardReveal { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        .engine-header {
+            padding: 3rem; background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
+            text-align: center; color: white;
+        }
+        .engine-header i { font-size: 3rem; color: var(--brand-accent); margin-bottom: 1.5rem; }
+        .engine-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem; }
+        .engine-header p { opacity: 0.8; font-size: 1rem; }
+
+        .engine-body { padding: 3.5rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .col-span-2 { grid-column: span 2; }
+
+        .input-group { margin-bottom: 0.5rem; }
+        .input-group label {
+            display: block; font-size: 0.8125rem; font-weight: 800; color: var(--brand-primary);
+            margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+
+        .premium-input, .premium-select, .premium-textarea {
+            width: 100%; padding: 1rem 1.25rem; border-radius: 1rem;
+            border: 2px solid #e2e8f0; background-color: #f8fafc;
+            font-family: inherit; font-size: 1rem; transition: var(--transition); outline: none;
+            color: var(--brand-primary); font-weight: 600;
+        }
+
+        .premium-input:focus, .premium-select:focus, .premium-textarea:focus {
+            border-color: var(--brand-accent); background-color: white;
+            box-shadow: 0 0 0 5px rgba(201, 162, 39, 0.1);
+        }
+
+        .btn-submit {
+            width: 100%; padding: 1.25rem; background: linear-gradient(135deg, var(--brand-accent), var(--brand-accent-hover));
+            color: var(--brand-primary); border: none; border-radius: 1.25rem; font-size: 1.125rem;
+            font-weight: 800; cursor: pointer; transition: var(--transition);
+            display: flex; align-items: center; justify-content: center; gap: 1rem;
+            margin-top: 1rem; box-shadow: 0 10px 25px rgba(201, 162, 39, 0.3);
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(201, 162, 39, 0.4); }
+
+        /* --- Footer --- */
+        .premium-footer { background: var(--brand-primary); color: white; padding: 4rem 0 3rem; text-align: center; }
+        .footer-bottom p { opacity: 0.5; font-size: 0.875rem; }
+
+        /* --- Mobile --- */
+        .hamburger { display: none; font-size: 2rem; color: white; background: none; border: none; cursor: pointer; }
+        .mobile-panel { position: fixed; top: 0; right: -320px; width: 300px; height: 100vh; background: var(--brand-primary); z-index: 1500; padding: 4rem 2rem; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: -10px 0 40px rgba(0,0,0,0.4); }
+        .mobile-panel.active { right: 0; }
+        .close-menu { position: absolute; top: 1.5rem; right: 1.5rem; color: white; background: none; border: none; font-size: 2rem; cursor: pointer; }
+        .mobile-links { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
+        .mobile-links a { color: white; text-decoration: none; font-size: 1.25rem; font-weight: 700; padding: 1rem; border-radius: 1rem; }
+        .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; visibility: hidden; z-index: 1400; transition: var(--transition); }
+        .menu-overlay.active { opacity: 1; visibility: visible; }
+
+        @media (max-width: 992px) {
+            .desktop-menu { display: none; }
+            .hamburger { display: block; }
+        }
+
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .col-span-2 { grid-column: span 1; }
+            .engine-body { padding: 2rem 1.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
+    <nav class="navbar" id="navbar">
+        <div class="container" style="max-width: 1400px;">
+            <a href="index.html" class="logo">
+                <img src="image/chrisreallogo.jpg" alt="CHRISREAL">
+                <span>CHRISREAL</span>
+            </a>
+            <ul class="nav-links desktop-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="life.html">School Life</a></li>
+                <li><a href="admission.html" class="active">Admissions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.php" class="portal-btn">Parent Portal</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
 
-  <div class="container">
-
-    <!-- Logo -->
-    <div class="logo">
-      <img src="image/chrisreallogo.jpg" alt="Chrisreal International School Logo">
-      <span>CHRISREAL INT. SCHOOL</span>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-panel" id="mobilePanel">
+        <button class="close-menu" id="closeMenu">✕</button>
+        <ul class="mobile-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="life.html">School Life</a></li>
+            <li><a href="admission.html" class="active">Admissions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.php" style="color:var(--brand-accent)">Parent Portal</a></li>
+        </ul>
     </div>
 
-    <!-- Desktop Menu -->
-    <ul class="nav-links desktop-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="life.html">School Life</a></li>
-      <li><a href="admission.html" class="active">Admissions</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html" >Contact</a></li>
-       <li><a href="http://chrisreal.page.gd/login.php">Parent Portal</a></li>
-    </ul>
+    <header class="hero-sub">
+        <h1>Join Our Legacy</h1>
+    </header>
 
-    <!-- Hamburger -->
-    <button class="hamburger" id="hamburger">
-      ☰
-    </button>
+    <section class="section">
+        <div class="container">
+            <div class="admission-engine-card">
+                <div class="engine-header">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h2>Institutional Application</h2>
+                    <p>Session 2026 / 2027 Enrollment Cycle</p>
+                </div>
+                
+                <div class="engine-body">
+                    <form>
+                        <div class="form-grid">
+                            <div class="input-group col-span-2">
+                                <label>Constituent Full Legal Name <span style="color:red;">*</span></label>
+                                <input type="text" class="premium-input" placeholder="e.g. Michael Kwesi Mensah" required>
+                            </div>
 
-  </div>
+                            <div class="input-group">
+                                <label>Date of Birth <span style="color:red;">*</span></label>
+                                <input type="date" class="premium-input" required>
+                            </div>
 
-  <!-- Overlay -->
-  <div class="menu-overlay" id="menuOverlay"></div>
+                            <div class="input-group">
+                                <label>Target Academic Grade <span style="color:red;">*</span></label>
+                                <select class="premium-select" required>
+                                    <option value="">-- Choose Grade --</option>
+                                    <option>KG 1</option><option>KG 2</option>
+                                    <option>Primary 1</option><option>Primary 2</option><option>Primary 3</option>
+                                    <option>Primary 4</option><option>Primary 5</option><option>Primary 6</option>
+                                    <option>JHS 1</option><option>JHS 2</option><option>JHS 3</option>
+                                </select>
+                            </div>
 
-  <!-- Mobile Side Panel -->
-  <div class="mobile-panel" id="mobilePanel">
+                            <div class="input-group col-span-2">
+                                <label>Primary Guardian Full Identity <span style="color:red;">*</span></label>
+                                <input type="text" class="premium-input" placeholder="Parent or Guardian name" required>
+                            </div>
 
-    <button class="close-menu" id="closeMenu">
-      ✕
-    </button>
+                            <div class="input-group">
+                                <label>Secure Phone Contact <span style="color:red;">*</span></label>
+                                <input type="tel" class="premium-input" placeholder="+233 XX XXX XXXX" required>
+                            </div>
 
-    <ul class="mobile-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="life.html">School Life</a></li>
-      <li><a href="admission.html"  class="active">Admissions</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-       <li><a href="http://chrisreal.page.gd/login.php">Parent Portal</a></li>
-    </ul>
+                            <div class="input-group">
+                                <label>Verified Email Address <span style="color:red;">*</span></label>
+                                <input type="email" class="premium-input" placeholder="guardian@email.com" required>
+                            </div>
 
-  </div>
+                            <div class="input-group col-span-2">
+                                <label>Prior Educational Institution (If Applicable)</label>
+                                <input type="text" class="premium-input" placeholder="Current school name">
+                            </div>
 
-</nav>
+                            <div class="input-group col-span-2">
+                                <label>Institutional Communication / Special Requests</label>
+                                <textarea class="premium-textarea" rows="4" placeholder="Any information we should consider..."></textarea>
+                            </div>
+                        </div>
 
-  <!-- Hero -->
-<header class="hero" style="height:100vh; background: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('image/admission.jpg') center/cover no-repeat;">
-    <div class="hero-content">
-      <h1>Admissions 2026/2027</h1>
-      <p>Join Ghana's Premier Educational Complex in Kasoa</p>
-    </div>
-  </header>
-
-  <!-- Form Section -->
-  <section class="section">
-    <div class="container">
-      <div class="form-container">
-        <h2 style="text-align: center; margin-bottom: 40px; color: #0a2540;">Student Application Form</h2>
-        
-        <form>
-          <div class="form-group">
-            <label>Child's Full Name <span style="color:red;">*</span></label>
-            <input type="text" placeholder="Enter full name" required>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>Date of Birth <span style="color:red;">*</span></label>
-              <input type="date" required>
+                        <button type="submit" class="btn-submit">
+                            Initialize Application Workflow
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-              <label>Grade Applying For <span style="color:red;">*</span></label>
-              <select required>
-                <option value="">-- Select Grade --</option>
-                <option>KG 1</option>
-                <option>KG 2</option>
-                <option>Primary 1</option>
-                <option>Primary 2</option>
-                <option>Primary 3</option>
-                <option>Primary 4</option>
-                <option>Primary 5</option>
-                <option>Primary 6</option>
-                <option>JHS 1</option>
-                <option>JHS 2</option>
-                <option>JHS 3</option>
-              </select>
+        </div>
+    </section>
+
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL &bull; Institutional Enrollment Environment</p>
             </div>
-          </div>
+        </div>
+    </footer>
 
-          <div class="form-group">
-            <label>Parent / Guardian Full Name <span style="color:red;">*</span></label>
-            <input type="text" placeholder="Parent or Guardian name" required>
-          </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.getElementById('hamburger');
+            const mobilePanel = document.getElementById('mobilePanel');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const closeMenu = document.getElementById('closeMenu');
 
-          <div class="form-row">
-            <div class="form-group">
-              <label>Phone Number <span style="color:red;">*</span></label>
-              <input type="tel" placeholder="+233 XX XXX XXXX" required>
-            </div>
-            <div class="form-group">
-              <label>Email Address <span style="color:red;">*</span></label>
-              <input type="email" placeholder="your@email.com" required>
-            </div>
-          </div>
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
 
-          <div class="form-group">
-            <label>Current School (if any)</label>
-            <input type="text" placeholder="Current school name">
-          </div>
+            hamburger.addEventListener('click', () => {
+                mobilePanel.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
 
-          <div class="form-group">
-            <label>Additional Message / Special Needs</label>
-            <textarea rows="5" placeholder="Any information you would like us to know..."></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary" style="width:100%; padding: 18px; font-size: 1.15rem;">
-            Submit Application
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL • Obom Road, Kasoa, Ghana</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+            [closeMenu, menuOverlay].forEach(el => el.addEventListener('click', () => {
+                mobilePanel.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }));
+        });
+    </script>
 </body>
 </html>
