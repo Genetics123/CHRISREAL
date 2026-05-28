@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHRISREAL | Excellence in Institutional Education</title>
+    <title>School Life | CHRISREAL INTERNATIONAL SCHOOL</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="image/favicon.ico">
@@ -23,13 +23,11 @@
     <style>
         :root {
             --brand-primary: #0a2540;
-            --brand-primary-dark: #06182c;
-            --brand-primary-light: #133b63;
             --brand-accent: #c9a227;
             --brand-accent-hover: #e0b62d;
+            --bg-light: #f8fafc;
             --text-main: #1e293b;
             --text-muted: #64748b;
-            --bg-light: #f8fafc;
             --radius-premium: 1.5rem;
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -5px rgba(0, 0, 0, 0.05);
@@ -60,177 +58,73 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .navbar.scrolled {
-            background: rgba(10, 37, 64, 0.98);
-            padding: 0.5rem 0;
-            box-shadow: var(--shadow-premium);
-        }
+        .navbar.scrolled { background: rgba(10, 37, 64, 0.98); padding: 0.5rem 0; box-shadow: var(--shadow-premium); }
 
-        .navbar .container {
-            width: min(92%, 1400px);
-            margin: auto;
-            padding: 1.25rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        .navbar .container { width: min(92%, 1400px); margin: auto; padding: 1.25rem 0; display: flex; align-items: center; justify-content: space-between; }
 
-        .logo {
-            display: flex;
-            align-items: center; gap: 0.75rem;
-            color: white; font-weight: 800; font-size: 1.5rem;
-            text-decoration: none; letter-spacing: -0.025em;
-        }
-
+        .logo { display: flex; align-items: center; gap: 0.75rem; color: white; font-weight: 800; font-size: 1.5rem; text-decoration: none; }
         .logo img { height: 50px; border-radius: 50%; border: 2px solid var(--brand-accent); }
 
         .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
-
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.8); text-decoration: none;
-            font-weight: 600; font-size: 0.9375rem; transition: var(--transition);
-            position: relative; padding: 0.5rem 0;
-        }
-
+        .nav-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-weight: 600; font-size: 0.9375rem; transition: var(--transition); }
         .nav-links a:hover, .nav-links a.active { color: var(--brand-accent); }
 
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
-            background: var(--brand-accent); transition: var(--transition);
-        }
+        .portal-btn { background: var(--brand-accent); color: var(--brand-primary) !important; padding: 0.75rem 1.5rem !important; border-radius: 99px; box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3); }
 
-        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-
-        .portal-btn {
-            background: var(--brand-accent); color: var(--brand-primary) !important;
-            padding: 0.75rem 1.5rem !important; border-radius: 99px;
-            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
-        }
-
-        .portal-btn:hover { background: var(--brand-accent-hover) !important; transform: translateY(-2px); }
-
-        /* --- Cinematic Hero --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(10,37,64,0.65), rgba(10,37,64,0.4)), url('image/background.jpg') center/cover no-repeat;
+        /* --- Hero --- */
+        .hero-sub {
+            height: 70vh;
+            background: linear-gradient(rgba(10,37,64,0.75), rgba(10,37,64,0.6)), url('image/school.jpg') center/cover no-repeat;
             display: flex; align-items: center; justify-content: center;
             text-align: center; color: white; padding: 0 1.5rem;
-            position: relative;
         }
+        .hero-sub h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1); }
 
-        .hero-content { max-width: 900px; animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
-
-        @keyframes heroReveal {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem);
-            line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800;
-        }
-
-        .hero p { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 500; opacity: 0.9; margin-bottom: 2.5rem; letter-spacing: 0.05em; text-transform: uppercase; }
-
-        .hero-actions { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; }
-
-        .btn-premium {
-            padding: 1.125rem 2.5rem; border-radius: 99px; font-weight: 800;
-            text-decoration: none; transition: var(--transition); font-size: 1rem;
-            display: inline-flex; align-items: center; gap: 0.75rem;
-        }
-
-        .btn-solid { background: var(--brand-accent); color: var(--brand-primary); box-shadow: 0 10px 25px rgba(201, 162, 39, 0.4); }
-        .btn-solid:hover { background: var(--brand-accent-hover); transform: translateY(-3px); }
-
-        .btn-outline { border: 2px solid rgba(255, 255, 255, 0.4); color: white; backdrop-filter: blur(10px); }
-        .btn-outline:hover { background: white; color: var(--brand-primary); transform: translateY(-3px); }
+        @keyframes heroReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
         /* --- Sections --- */
         .section { padding: 8rem 0; }
+        .container { width: min(92%, 1200px); margin: auto; }
 
         .section-header { text-align: center; max-width: 700px; margin: 0 auto 5rem; }
         .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--brand-primary); margin-bottom: 1rem; }
         .section-header p { color: var(--text-muted); font-size: 1.125rem; }
 
-        /* --- Premium Feature Grid --- */
-        .premium-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+        .premium-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; }
 
-        .feature-card {
+        .experience-card {
             background: white; border-radius: var(--radius-premium); overflow: hidden;
             box-shadow: var(--shadow-premium); transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.03); position: relative;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .feature-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-hover); }
+        .experience-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-hover); }
 
-        .card-img-wrapper { height: 260px; overflow: hidden; position: relative; }
-        .feature-card img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-        .feature-card:hover img { transform: scale(1.1); }
+        .card-img-wrapper { height: 280px; overflow: hidden; }
+        .experience-card img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .experience-card:hover img { transform: scale(1.1); }
 
         .card-content { padding: 2.5rem; }
         .card-content h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--brand-primary); margin-bottom: 1rem; }
         .card-content p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
 
-        .card-badge {
-            position: absolute; top: 1.5rem; right: 1.5rem;
-            background: var(--brand-accent); color: var(--brand-primary);
-            padding: 0.5rem 1rem; border-radius: 99px; font-weight: 800; font-size: 0.75rem;
-            text-transform: uppercase; letter-spacing: 0.05em; z-index: 10;
-        }
-
         /* --- Footer --- */
-        .premium-footer {
-            background: var(--brand-primary); color: white; padding: 6rem 0 3rem;
-        }
-
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem; margin-bottom: 4rem; }
-
-        .footer-brand h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-        .footer-brand p { opacity: 0.7; font-size: 0.9375rem; max-width: 300px; }
-
-        .footer-links h5 { font-size: 1.125rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--brand-accent); }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 0.75rem; }
-        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: var(--transition); }
-        .footer-links a:hover { color: white; padding-left: 0.5rem; }
-
-        .footer-contact h5 { font-size: 1.125rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--brand-accent); }
-        .footer-contact p { opacity: 0.7; margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem; }
-        .footer-contact i { color: var(--brand-accent); margin-top: 0.25rem; }
-
-        .footer-bottom { padding-top: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
+        .premium-footer { background: var(--brand-primary); color: white; padding: 4rem 0 3rem; text-align: center; }
         .footer-bottom p { opacity: 0.5; font-size: 0.875rem; }
 
-        /* --- Hamburger & Mobile --- */
+        /* --- Mobile --- */
         .hamburger { display: none; font-size: 2rem; color: white; background: none; border: none; cursor: pointer; }
-
-        .mobile-panel {
-            position: fixed; top: 0; right: -320px; width: 300px; height: 100vh;
-            background: var(--brand-primary); z-index: 1500; padding: 4rem 2rem;
-            transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: -10px 0 40px rgba(0,0,0,0.4);
-        }
-
+        .mobile-panel { position: fixed; top: 0; right: -320px; width: 300px; height: 100vh; background: var(--brand-primary); z-index: 1500; padding: 4rem 2rem; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: -10px 0 40px rgba(0,0,0,0.4); }
         .mobile-panel.active { right: 0; }
-
         .close-menu { position: absolute; top: 1.5rem; right: 1.5rem; color: white; background: none; border: none; font-size: 2rem; cursor: pointer; }
-
         .mobile-links { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
-        .mobile-links a { color: white; text-decoration: none; font-size: 1.25rem; font-weight: 700; padding: 1rem; border-radius: 1rem; transition: var(--transition); }
-        .mobile-links a:hover { background: rgba(255, 255, 255, 0.05); color: var(--brand-accent); }
-
+        .mobile-links a { color: white; text-decoration: none; font-size: 1.25rem; font-weight: 700; padding: 1rem; border-radius: 1rem; }
         .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; visibility: hidden; z-index: 1400; transition: var(--transition); }
         .menu-overlay.active { opacity: 1; visibility: visible; }
 
         @media (max-width: 992px) {
             .desktop-menu { display: none; }
             .hamburger { display: block; }
-            .section { padding: 5rem 0; }
-        }
-
-        @media (max-width: 640px) {
-            .hero-actions { flex-direction: column; }
-            .btn-premium { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -242,17 +136,15 @@
                 <img src="image/chrisreallogo.jpg" alt="CHRISREAL">
                 <span>CHRISREAL</span>
             </a>
-
             <ul class="nav-links desktop-menu">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="life.html">School Life</a></li>
+                <li><a href="life.html" class="active">School Life</a></li>
                 <li><a href="admission.html">Admissions</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.php" class="portal-btn">Parent Portal</a></li>
             </ul>
-
             <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
@@ -261,9 +153,9 @@
     <div class="mobile-panel" id="mobilePanel">
         <button class="close-menu" id="closeMenu">✕</button>
         <ul class="mobile-links">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="life.html">School Life</a></li>
+            <li><a href="life.html" class="active">School Life</a></li>
             <li><a href="admission.html">Admissions</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -271,59 +163,45 @@
         </ul>
     </div>
 
-    <header class="hero">
-        <div class="hero-content">
-            <p>ESTABLISHED IN EXCELLENCE</p>
-            <h1>Nurturing the Leaders of Tomorrow</h1>
-            <div class="hero-actions">
-                <a href="admission.html" class="btn-premium btn-solid">
-                    Apply for Admission <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="about.html" class="btn-premium btn-outline">
-                    Discover Our Vision
-                </a>
-            </div>
-        </div>
+    <header class="hero-sub">
+        <h1>Life at CHRISREAL</h1>
     </header>
 
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2>The CHRISREAL Advantage</h2>
-                <p>We provide a comprehensive academic environment designed to foster critical thinking, creativity, and ethical leadership in every student.</p>
+                <h2>Beyond Academics</h2>
+                <p>Developing the whole child through a synergy of curriculum, culture, and physical excellence.</p>
             </div>
 
             <div class="premium-grid">
-                <div class="feature-card">
-                    <span class="card-badge">Academic</span>
+                <div class="experience-card">
                     <div class="card-img-wrapper">
-                        <img src="image/academic.jpg" alt="Academics">
+                        <img src="image/teachers.jpg" alt="Academic Excellence">
                     </div>
                     <div class="card-content">
-                        <h3>World-Class Faculty</h3>
-                        <p>Our educators are more than just teachers—they are mentors dedicated to unlocking the full potential of every constituent.</p>
+                        <h3>Academic Excellence</h3>
+                        <p>Our NACCA-based curriculum is blended with high Ghanaian and International standards, delivered in small class sizes for personalized mentorship.</p>
                     </div>
                 </div>
 
-                <div class="feature-card">
-                    <span class="card-badge">Infrastructure</span>
+                <div class="experience-card">
                     <div class="card-img-wrapper">
-                        <img src="image/campus.jpg" alt="Campus">
+                        <img src="image/sport.jpg" alt="Sports & Athletics">
                     </div>
                     <div class="card-content">
-                        <h3>Modern Campus</h3>
-                        <p>State-of-the-art facilities designed to provide a safe, stimulating, and technologically advanced learning environment.</p>
+                        <h3>Sports & Athletics</h3>
+                        <p>From competitive football and basketball to the discipline of the School Cadet, we nurture physical fitness and a resilient team spirit.</p>
                     </div>
                 </div>
 
-                <div class="feature-card">
-                    <span class="card-badge">Holistic</span>
+                <div class="experience-card">
                     <div class="card-img-wrapper">
-                        <img src="image/event.jpg" alt="Activities">
+                        <img src="image/arts.jpg" alt="Arts & Creativity">
                     </div>
                     <div class="card-content">
-                        <h3>Future-Ready Skills</h3>
-                        <p>Beyond the classroom, we focus on character building, athletic excellence, and the soft skills required for the 21st century.</p>
+                        <h3>Arts & Creativity</h3>
+                        <p>Through music, dance, drama, and cultural showcases, we provide a vibrant stage for constituents to express their unique creative voices.</p>
                     </div>
                 </div>
             </div>
@@ -332,29 +210,8 @@
 
     <footer class="premium-footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h4>CHRISREAL INTERNATIONAL</h4>
-                    <p>Building confident, innovative, and ethical leaders for a global future. A beacon of excellence in Kasoa, Ghana.</p>
-                </div>
-                <div class="footer-links">
-                    <h5>Institutional</h5>
-                    <ul>
-                        <li><a href="about.html">Our Story</a></li>
-                        <li><a href="life.html">Campus Life</a></li>
-                        <li><a href="admission.html">Admissions</a></li>
-                        <li><a href="login.php">Parent Intelligence Portal</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h5>Connect</h5>
-                    <p><i class="fa-solid fa-location-dot"></i> P.O. BOX 15, Obom Road, Kasoa, Ghana</p>
-                    <p><i class="fa-solid fa-phone"></i> +233 (0) XX XXX XXXX</p>
-                    <p><i class="fa-solid fa-envelope"></i> info@chrisreal.edu.gh</p>
-                </div>
-            </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL &bull; Institutional Data Management Environment</p>
+                <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL &bull; Institutional Experience Environment</p>
             </div>
         </div>
     </footer>
@@ -367,30 +224,22 @@
             const menuOverlay = document.getElementById('menuOverlay');
             const closeMenu = document.getElementById('closeMenu');
 
-            // Scroll effect
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
             });
 
-            function openMenu() {
+            hamburger.addEventListener('click', () => {
                 mobilePanel.classList.add('active');
                 menuOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
-            }
+            });
 
-            function closeMobileMenu() {
+            [closeMenu, menuOverlay].forEach(el => el.addEventListener('click', () => {
                 mobilePanel.classList.remove('active');
                 menuOverlay.classList.remove('active');
                 document.body.style.overflow = '';
-            }
-
-            hamburger.addEventListener('click', openMenu);
-            closeMenu.addEventListener('click', closeMobileMenu);
-            menuOverlay.addEventListener('click', closeMobileMenu);
+            }));
         });
     </script>
 </body>
