@@ -1,109 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - CHRISREAL INT. SCHOOL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | CHRISREAL INTERNATIONAL SCHOOL</title>
 
- <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="image/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
-<link rel="manifest" href="image/site.webmanifest">
-  
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+    <link rel="manifest" href="image/site.webmanifest">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Iconography -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --brand-primary: #0a2540;
+            --brand-primary-dark: #06182c;
+            --brand-primary-light: #133b63;
+            --brand-accent: #c9a227;
+            --brand-accent-hover: #e0b62d;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --radius-premium: 1.5rem;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 10px -5px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Premium Navbar --- */
+        .navbar {
+            background: rgba(10, 37, 64, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1200;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 37, 64, 0.98);
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .navbar .container {
+            width: min(92%, 1400px);
+            margin: auto;
+            padding: 1.25rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center; gap: 0.75rem;
+            color: white; font-weight: 800; font-size: 1.5rem;
+            text-decoration: none; letter-spacing: -0.025em;
+        }
+
+        .logo img { height: 50px; border-radius: 50%; border: 2px solid var(--brand-accent); }
+
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8); text-decoration: none;
+            font-weight: 600; font-size: 0.9375rem; transition: var(--transition);
+            position: relative; padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover, .nav-links a.active { color: var(--brand-accent); }
+
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--brand-accent); transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .portal-btn {
+            background: var(--brand-accent); color: var(--brand-primary) !important;
+            padding: 0.75rem 1.5rem !important; border-radius: 99px;
+            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
+        }
+
+        /* --- Secondary Hero --- */
+        .hero-sub {
+            height: 60vh;
+            background: linear-gradient(rgba(10,37,64,0.75), rgba(10,37,64,0.6)), url('image/about.jpg') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 0 1.5rem;
+            padding-top: var(--header-height);
+        }
+
+        .hero-sub h1 {
+            font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800; animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes heroReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Sections --- */
+        .section { padding: 8rem 0; }
+
+        .container { width: min(92%, 1200px); margin: auto; }
+
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+
+        .about-card {
+            background: white; border-radius: var(--radius-premium); padding: 3rem;
+            box-shadow: var(--shadow-premium); border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+
+        .about-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
+
+        .about-card i { font-size: 2.5rem; color: var(--brand-accent); margin-bottom: 1.5rem; }
+
+        .about-card h3 { font-family: 'Playfair Display', serif; font-size: 1.75rem; color: var(--brand-primary); margin-bottom: 1.25rem; }
+
+        .about-card p { color: var(--text-muted); font-size: 1.0625rem; line-height: 1.8; }
+
+        /* --- Footer --- */
+        .premium-footer { background: var(--brand-primary); color: white; padding: 6rem 0 3rem; margin-top: 4rem; }
+        .footer-bottom { padding-top: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; margin-top: 3rem; }
+        .footer-bottom p { opacity: 0.5; font-size: 0.875rem; }
+
+        /* --- Mobile --- */
+        .hamburger { display: none; font-size: 2rem; color: white; background: none; border: none; cursor: pointer; }
+        .mobile-panel { position: fixed; top: 0; right: -320px; width: 300px; height: 100vh; background: var(--brand-primary); z-index: 1500; padding: 4rem 2rem; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: -10px 0 40px rgba(0,0,0,0.4); }
+        .mobile-panel.active { right: 0; }
+        .close-menu { position: absolute; top: 1.5rem; right: 1.5rem; color: white; background: none; border: none; font-size: 2rem; cursor: pointer; }
+        .mobile-links { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
+        .mobile-links a { color: white; text-decoration: none; font-size: 1.25rem; font-weight: 700; padding: 1rem; border-radius: 1rem; }
+        .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; visibility: hidden; z-index: 1400; transition: var(--transition); }
+        .menu-overlay.active { opacity: 1; visibility: visible; }
+
+        @media (max-width: 992px) {
+            .desktop-menu { display: none; }
+            .hamburger { display: block; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- ==================== NAVBAR ==================== -->
-<nav class="navbar">
-  <div class="container">
-    <div class="logo">
-      <img src="image/chrisreallogo.jpg" alt="Chrisreal International School Logo">
-      <span>CHRISREAL INT. SCHOOL</span>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="image/chrisreallogo.jpg" alt="CHRISREAL">
+                <span>CHRISREAL</span>
+            </a>
+            <ul class="nav-links desktop-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="life.html">School Life</a></li>
+                <li><a href="admission.html">Admissions</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.php" class="portal-btn">Parent Portal</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-panel" id="mobilePanel">
+        <button class="close-menu" id="closeMenu">✕</button>
+        <ul class="mobile-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="life.html">School Life</a></li>
+            <li><a href="admission.html">Admissions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.php" style="color:var(--brand-accent)">Parent Portal</a></li>
+        </ul>
     </div>
 
-    <!-- Desktop Menu -->
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="life.html">School Life</a></li>
-      <li><a href="admission.html">Admissions</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-       <li><a href="http://chrisreal.page.gd/login.php">Parent Portal</a></li>
-    </ul>
+    <header class="hero-sub">
+        <h1>Our Story & Vision</h1>
+    </header>
 
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
-  </div>
-</nav>
+    <section class="section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="about-card">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h3>Founded with Purpose</h3>
+                    <p>Established with a mission to provide world-class education rooted in strong moral foundations, CHRISREAL has grown to be a beacon of excellence in Kasoa and beyond.</p>
+                </div>
 
-<!-- MOBILE PANEL — matches the ID main.js expects -->
-<div class="mobile-panel" id="mobilePanel">
-  <button class="close-menu" id="closeMenu" aria-label="Close menu">&#x2715;</button>
-  <ul class="mobile-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="life.html">School Life</a></li>
-    <li><a href="admission.html">Admissions</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="contact.html">Contact</a></li>
-     <li><a href="http://chrisreal.page.gd/login.php">Parent Portal</a></li>
-  </ul>
-</div>
+                <div class="about-card">
+                    <i class="fa-solid fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To raise morally upright leaders who are equipped to navigate the complexities of a globalized world with integrity, wisdom, and excellence.</p>
+                </div>
 
-<!-- OVERLAY — clicking it closes the menu -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<!-- ==================== HERO ==================== -->
-<header class="hero" style="height:65vh;
-  background: linear-gradient(rgba(10,37,64,0.8), rgba(10,37,64,0.8)),
-  url('image/about.jpg') center/cover no-repeat;">
-  <div class="hero-content">
-    <h1>Our Story &amp; Vision</h1>
-  </div>
-</header>
-
-<!-- ==================== TILES ==================== -->
-<section class="section">
-  <div class="container">
-    <div class="tiles-grid">
-
-      <div class="tile">
-        <div class="tile-content">
-          <h3>Founded with Purpose</h3>
-          <p>Established to provide world-class education with strong moral foundations in Kasoa and beyond.</p>
+                <div class="about-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide quality and excellent education that meets international standards, developing children into critical, analytical thinkers and compassionate citizens.</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="tile">
-        <div class="tile-content">
-          <h3>Vision</h3>
-          <p>To raise morally upright leaders.</p>
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL &bull; Institutional Data Management Environment</p>
+            </div>
         </div>
-      </div>
+    </footer>
 
-      <div class="tile">
-        <div class="tile-content">
-          <h3>Mission</h3>
-          <p>To provide quality and excellent education that meets international standards and to develop children into critical and analytical thinkers.</p>
-        </div>
-      </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.getElementById('hamburger');
+            const mobilePanel = document.getElementById('mobilePanel');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const closeMenu = document.getElementById('closeMenu');
 
-    </div>
-  </div>
-</section>
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
 
-<!-- ==================== FOOTER ==================== -->
-<footer>
-  <div class="container">
-    <p>&copy; <span id="year"></span> CHRISREAL INTERNATIONAL SCHOOL &bull; Kasoa, Ghana</p>
-  </div>
-</footer>
+            hamburger.addEventListener('click', () => {
+                mobilePanel.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
 
-<script src="assets/js/main.js"></script>
+            [closeMenu, menuOverlay].forEach(el => el.addEventListener('click', () => {
+                mobilePanel.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }));
+        });
+    </script>
 </body>
 </html>
