@@ -180,11 +180,11 @@
             text-transform: uppercase; letter-spacing: 0.05em; z-index: 10;
         }
 
-        /* ========== SIMPLE FOOTER: VERTICAL SOCIAL + INSTITUTIONAL + CONNECT ========== */
+        /* ========== PERFECT FOOTER: exactly 3 sections as per image ========== */
         .premium-footer {
             background: var(--brand-primary);
             color: white;
-            padding: 5rem 0 2.5rem;
+            padding: 4rem 0 2rem;
         }
 
         .container {
@@ -192,134 +192,80 @@
             margin: 0 auto;
         }
 
-        .footer-three-col {
+        .footer-exact {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;  /* three equal sections */
+            grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
             margin-bottom: 3rem;
+            align-items: start;
         }
 
-        /* Vertical social column */
-        .footer-social h5, .footer-institutional h5, .footer-connect h5 {
+        /* each column */
+        .footer-col h3 {
             font-size: 1.1rem;
             font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--brand-accent);
             margin-bottom: 1.6rem;
-            color: var(--brand-accent);
-            letter-spacing: 0.05em;
-            position: relative;
-            display: inline-block;
-        }
-        .footer-social h5:after, .footer-institutional h5:after, .footer-connect h5:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--brand-accent);
-            opacity: 0.6;
+            text-transform: uppercase;
+            border-left: 3px solid var(--brand-accent);
+            padding-left: 0.8rem;
         }
 
-        /* Vertical stacked social links */
-        .social-vertical {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .social-vertical a {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            padding: 0.5rem 0;
-            width: fit-content;
-        }
-
-        .social-vertical a i {
-            width: 28px;
-            font-size: 1.3rem;
-            color: var(--brand-accent);
-            transition: var(--transition);
-        }
-
-        .social-vertical a span {
-            letter-spacing: 0.3px;
-        }
-
-        .social-vertical a:hover {
-            transform: translateX(6px);
-            color: white;
-        }
-
-        .social-vertical a:hover i {
-            color: var(--brand-accent-hover);
-            transform: scale(1.05);
-        }
-
-        /* Institutional list styling */
-        .footer-institutional ul, .footer-connect ul {
+        /* lists */
+        .footer-col ul {
             list-style: none;
         }
-        .footer-institutional li, .footer-connect li {
+        .footer-col li {
             margin-bottom: 0.85rem;
         }
-        .footer-institutional a, .footer-connect a {
-            color: rgba(255, 255, 255, 0.7);
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.75);
             text-decoration: none;
-            transition: var(--transition);
             font-size: 0.9rem;
+            transition: var(--transition);
             display: inline-block;
         }
-        .footer-institutional a:hover, .footer-connect a:hover {
+        .footer-col a:hover {
             color: white;
-            padding-left: 0.5rem;
-            transform: translateX(4px);
+            transform: translateX(5px);
         }
 
-        /* Connect details (address, phone, email) */
-        .contact-block p {
+        /* contact lines with emoji (matches image exactly: 📍, 📞, 📧) */
+        .contact-line {
             display: flex;
             align-items: flex-start;
-            gap: 0.9rem;
+            gap: 0.8rem;
             margin-bottom: 1rem;
-            opacity: 0.8;
             font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.5;
         }
-        .contact-block i {
-            color: var(--brand-accent);
-            width: 20px;
-            margin-top: 0.2rem;
+        .contact-emoji {
+            font-size: 1rem;
+            min-width: 1.4rem;
         }
 
-        .footer-bottom {
+        /* copyright */
+        .footer-copyright {
+            text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-        .footer-bottom p {
+            font-size: 0.75rem;
             opacity: 0.6;
-            font-size: 0.8rem;
             letter-spacing: 0.3px;
         }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .footer-three-col {
+        /* responsive */
+        @media (max-width: 800px) {
+            .footer-exact {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
+                gap: 2rem;
                 text-align: left;
             }
-            .social-vertical a {
-                width: auto;
-            }
-            .footer-social h5:after, .footer-institutional h5:after, .footer-connect h5:after {
-                left: 0;
+            .footer-col h3 {
+                border-left: 3px solid var(--brand-accent);
+                padding-left: 0.8rem;
             }
         }
 
@@ -451,40 +397,25 @@
         </div>
     </section>
 
-    <!-- SIMPLE, CLEAN FOOTER: Vertical Social (FB, X, etc) + Institutional + Connect (exactly as requested) -->
+    <!-- EXACT FOOTER: FOLLOW US (vertical) | INSTITUTIONAL | CONNECT  (matching the image perfectly) -->
     <footer class="premium-footer">
         <div class="container">
-            <div class="footer-three-col">
-                <!-- LEFT COLUMN: VERTICAL SOCIAL (Facebook, X, Instagram, LinkedIn, etc) -->
-                <div class="footer-social">
-                    <h5>FOLLOW US</h5>
-                    <div class="social-vertical">
-                        <a href="#" aria-label="Facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
-                            <span>Facebook</span>
-                        </a>
-                        <a href="#" aria-label="X (Twitter)">
-                            <i class="fa-brands fa-x-twitter"></i>
-                            <span>X (Twitter)</span>
-                        </a>
-                        <a href="#" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="#" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="#" aria-label="YouTube">
-                            <i class="fa-brands fa-youtube"></i>
-                            <span>YouTube</span>
-                        </a>
-                    </div>
+            <div class="footer-exact">
+                <!-- Column 1: FOLLOW US (vertical list) -->
+                <div class="footer-col">
+                    <h3>FOLLOW US</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">X (Twitter)</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
                 </div>
 
-                <!-- MIDDLE COLUMN: INSTITUTIONAL (exactly the menu from image) -->
-                <div class="footer-institutional">
-                    <h5>INSTITUTIONAL</h5>
+                <!-- Column 2: INSTITUTIONAL (exactly as per image) -->
+                <div class="footer-col">
+                    <h3>INSTITUTIONAL</h3>
                     <ul>
                         <li><a href="about.html">Our Story</a></li>
                         <li><a href="life.html">Campus Life</a></li>
@@ -493,18 +424,25 @@
                     </ul>
                 </div>
 
-                <!-- RIGHT COLUMN: CONNECT (address, phone, email as in your reference) -->
-                <div class="footer-connect">
-                    <h5>CONNECT</h5>
-                    <div class="contact-block">
-                        <p><i class="fa-solid fa-location-dot"></i> P.O. BOX 15, Obom Road, Kasoa, Ghana</p>
-                        <p><i class="fa-solid fa-phone"></i> +233 (0) XX XXX XXXX</p>
-                        <p><i class="fa-solid fa-envelope"></i> info@chrisreal.edu.gh</p>
+                <!-- Column 3: CONNECT (with emojis exactly: 📍 📞 📧) -->
+                <div class="footer-col">
+                    <h3>CONNECT</h3>
+                    <div class="contact-line">
+                        <span class="contact-emoji">📍</span>
+                        <span>P.O. BOX 15, Obom Road, Kasoa, Ghana</span>
+                    </div>
+                    <div class="contact-line">
+                        <span class="contact-emoji">📞</span>
+                        <span>+233 (0) XX XXX XXXX</span>
+                    </div>
+                    <div class="contact-line">
+                        <span class="contact-emoji">📧</span>
+                        <span>info@chrisreal.edu.gh</span>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-bottom">
+            <div class="footer-copyright">
                 <p>© 2026 CHRISREAL INTERNATIONAL SCHOOL • Institutional Data Management Environment</p>
             </div>
         </div>
