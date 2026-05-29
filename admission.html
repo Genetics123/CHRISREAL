@@ -180,6 +180,11 @@
             .col-span-2 { grid-column: span 1; }
             .engine-body { padding: 2rem 1.5rem; }
         }
+
+        /* Success toast / notification */
+        .toast-notify {
+            position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: var(--brand-primary); color: white; padding: 1rem 2rem; border-radius: 99px; font-weight: 600; z-index: 2000; box-shadow: 0 10px 25px rgba(0,0,0,0.2); opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -231,21 +236,29 @@
                 </div>
                 
                 <div class="engine-body">
-                    <form>
+                    <!-- Form linked to email using FormSubmit.co (free, reliable) -->
+                    <form id="applicationForm" action="https://formsubmit.co/chrisrealinternationalschool@gmail.com" method="POST">
+                        <!-- FormSubmit configuration: avoid captcha, custom redirect, and nice subject -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="NEW ADMISSION APPLICATION - CHRISREAL INTERNATIONAL SCHOOL">
+                        <!-- Redirect back to admission page with success message -->
+                        <input type="hidden" name="_next" value="https://chrisreal.edu.gh/admission.html?submitted=true">
+                        
                         <div class="form-grid">
                             <div class="input-group col-span-2">
                                 <label>Constituent Full Legal Name <span style="color:red;">*</span></label>
-                                <input type="text" class="premium-input" placeholder="e.g. Michael Kwesi Mensah" required>
+                                <input type="text" class="premium-input" name="full_name" placeholder="e.g. Michael Kwesi Mensah" required>
                             </div>
 
                             <div class="input-group">
                                 <label>Date of Birth <span style="color:red;">*</span></label>
-                                <input type="date" class="premium-input" required>
+                                <input type="date" class="premium-input" name="date_of_birth" required>
                             </div>
 
                             <div class="input-group">
                                 <label>Target Academic Grade <span style="color:red;">*</span></label>
-                                <select class="premium-select" required>
+                                <select class="premium-select" name="grade_applying" required>
                                     <option value="">-- Choose Grade --</option>
                                     <option>KG 1</option><option>KG 2</option>
                                     <option>Primary 1</option><option>Primary 2</option><option>Primary 3</option>
@@ -256,31 +269,31 @@
 
                             <div class="input-group col-span-2">
                                 <label>Primary Guardian Full Identity <span style="color:red;">*</span></label>
-                                <input type="text" class="premium-input" placeholder="Parent or Guardian name" required>
+                                <input type="text" class="premium-input" name="guardian_name" placeholder="Parent or Guardian name" required>
                             </div>
 
                             <div class="input-group">
-                                <label>Secure Phone Contact <span style="color:red;">*</span></label>
-                                <input type="tel" class="premium-input" placeholder="+233 XX XXX XXXX" required>
+                                <label>Secure Phone Contact (WhatsApp) <span style="color:red;">*</span></label>
+                                <input type="tel" class="premium-input" name="phone" placeholder="+233 XX XXX XXXX" required>
                             </div>
 
                             <div class="input-group">
                                 <label>Verified Email Address <span style="color:red;">*</span></label>
-                                <input type="email" class="premium-input" placeholder="guardian@email.com" required>
+                                <input type="email" class="premium-input" name="email" placeholder="guardian@email.com" required>
                             </div>
 
                             <div class="input-group col-span-2">
                                 <label>Prior Educational Institution (If Applicable)</label>
-                                <input type="text" class="premium-input" placeholder="Current school name">
+                                <input type="text" class="premium-input" name="previous_school" placeholder="Current school name">
                             </div>
 
                             <div class="input-group col-span-2">
                                 <label>Institutional Communication / Special Requests</label>
-                                <textarea class="premium-textarea" rows="4" placeholder="Any information we should consider..."></textarea>
+                                <textarea class="premium-textarea" name="additional_info" rows="4" placeholder="Any information we should consider..."></textarea>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn-submit">
+                        <button type="submit" class="btn-submit" id="submitBtn">
                             Initialize Application Workflow
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
@@ -298,6 +311,9 @@
         </div>
     </footer>
 
+    <!-- Toast notification for submission feedback -->
+    <div id="toastMessage" class="toast-notify">Application sent successfully! We'll get back to you shortly.</div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.getElementById('navbar');
@@ -305,12 +321,16 @@
             const mobilePanel = document.getElementById('mobilePanel');
             const menuOverlay = document.getElementById('menuOverlay');
             const closeMenu = document.getElementById('closeMenu');
+            const form = document.getElementById('applicationForm');
+            const toast = document.getElementById('toastMessage');
 
+            // Scroll effect
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) navbar.classList.add('scrolled');
                 else navbar.classList.remove('scrolled');
             });
 
+            // Mobile menu
             hamburger.addEventListener('click', () => {
                 mobilePanel.classList.add('active');
                 menuOverlay.classList.add('active');
@@ -322,6 +342,55 @@
                 menuOverlay.classList.remove('active');
                 document.body.style.overflow = '';
             }));
+
+            // Handle form submission via AJAX to avoid redirection and show toast?
+            // But FormSubmit will redirect by default. To improve UX, we can override with fetch,
+            // but we also want emails. Using fetch to FormSubmit endpoint prevents redirect and shows custom message.
+            // This way user stays on page and gets confirmation.
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const submitBtn = document.getElementById('submitBtn');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+                    submitBtn.disabled = true;
+
+                    const formData = new FormData(form);
+                    // Add a hidden _captcha false is already there, ensure redirect off via fetch
+                    try {
+                        const response = await fetch('https://formsubmit.co/ajax/chrisrealinternationalschool@gmail.com', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        if (response.ok) {
+                            // Show success toast
+                            toast.style.opacity = '1';
+                            setTimeout(() => { toast.style.opacity = '0'; }, 5000);
+                            form.reset();
+                            // Optional: scroll to toast
+                            toast.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        } else {
+                            alert('Submission error. Please try again or contact admissions directly.');
+                        }
+                    } catch (err) {
+                        console.error(err);
+                        alert('Network error. Kindly check your connection and resubmit.');
+                    } finally {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
+
+            // If URL has ?submitted=true, show a welcome message (for redirect case but we now use AJAX)
+            if (window.location.search.includes('submitted=true')) {
+                toast.style.opacity = '1';
+                setTimeout(() => { toast.style.opacity = '0'; }, 6000);
+                // Clean URL without reloading
+                const url = new URL(window.location);
+                url.searchParams.delete('submitted');
+                window.history.replaceState({}, document.title, url.pathname);
+            }
         });
     </script>
 </body>
