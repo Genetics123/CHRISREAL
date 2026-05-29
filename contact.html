@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="assets/css/styles.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Contact Us | CHRISREAL INTERNATIONAL SCHOOL</title>
 
     <!-- Favicon -->
@@ -85,111 +85,142 @@
         }
         .nav-links a:hover, .nav-links a.active { color: var(--brand-accent); }
 
-        .portal-btn {
-            background: var(--brand-accent); color: var(--brand-primary) !important;
-            padding: 0.75rem 1.5rem !important; border-radius: 99px;
-            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
-        }
-
-        /* --- Hero --- */
+        /* --- Hero - optimized for mobile height --- */
         .hero-sub {
-            height: 60vh;
+            min-height: 40vh;
+            height: auto;
+            padding: 7rem 1.5rem 4rem;
             background: linear-gradient(rgba(10,37,64,0.75), rgba(10,37,64,0.6)), url('image/background.jpg') center/cover no-repeat;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; color: white; padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
         }
-        .hero-sub h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .hero-sub h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(2rem, 8vw, 3.5rem); 
+            font-weight: 800; 
+            animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1);
+            line-height: 1.2;
+        }
 
         @keyframes heroReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- Content Section --- */
-        .section { padding: 8rem 0; }
+        /* --- Content Section - mobile first improvements --- */
+        .section { padding: 5rem 0; }
         .container { width: min(92%, 1200px); margin: auto; }
 
-        .contact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; }
+        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
 
-        .info-cards { display: flex; flex-direction: column; gap: 2rem; }
+        /* info cards */
+        .info-cards { display: flex; flex-direction: column; gap: 1.5rem; }
 
         .info-card {
-            background: white; border-radius: 1.5rem; padding: 2.5rem;
+            background: white; border-radius: 1.25rem; padding: 1.5rem;
             box-shadow: var(--shadow-premium); border: 1px solid rgba(0,0,0,0.03);
-            transition: var(--transition); display: flex; gap: 1.5rem; align-items: flex-start;
+            transition: var(--transition); display: flex; gap: 1rem; align-items: center;
         }
 
-        .info-card:hover { transform: scale(1.03); box-shadow: var(--shadow-hover); }
+        .info-card i { 
+            font-size: 1.5rem; color: var(--brand-accent); background: var(--bg-light); 
+            width: 50px; height: 50px; border-radius: 1rem; display: flex; align-items: center; 
+            justify-content: center; flex-shrink: 0;
+        }
 
-        .info-card i { font-size: 1.75rem; color: var(--brand-accent); background: var(--bg-light); width: 60px; height: 60px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; }
-
-        .info-card h4 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--brand-primary); margin-bottom: 0.5rem; }
-        .info-card p { color: var(--text-muted); font-size: 0.9375rem; font-weight: 500; }
+        .info-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--brand-primary); margin-bottom: 0.25rem; }
+        .info-card p, .info-card .contact-link { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; word-break: break-word; }
         .contact-link { color: var(--text-muted); text-decoration: none; transition: var(--transition); display: inline-block; }
         .contact-link:hover { color: var(--brand-accent); transform: translateX(3px); }
 
+        /* message form card */
         .message-oracle-card {
-            background: white; border-radius: 2rem; padding: 4rem;
+            background: white; border-radius: 1.5rem; padding: 2rem 1.5rem;
             box-shadow: var(--shadow-premium); border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .message-oracle-card h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--brand-primary); margin-bottom: 3rem; text-align: center; }
+        .message-oracle-card h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.8rem; 
+            color: var(--brand-primary); 
+            margin-bottom: 1.5rem; 
+            text-align: center; 
+        }
 
-        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-        .col-span-2 { grid-column: span 2; }
+        .form-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
+        .col-span-2 { grid-column: span 1; }
 
         .premium-input, .premium-textarea {
-            width: 100%; padding: 1rem 1.25rem; border-radius: 1rem;
+            width: 100%; padding: 0.9rem 1rem; border-radius: 1rem;
             border: 2px solid #e2e8f0; background-color: #f8fafc;
-            font-family: inherit; font-size: 1rem; transition: var(--transition); outline: none;
-            color: var(--brand-primary); font-weight: 600;
+            font-family: inherit; font-size: 0.95rem; transition: var(--transition); outline: none;
+            color: var(--brand-primary); font-weight: 500;
         }
 
         .premium-input:focus, .premium-textarea:focus {
             border-color: var(--brand-accent); background-color: white;
-            box-shadow: 0 0 0 5px rgba(201, 162, 39, 0.1);
+            box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.1);
         }
 
         .btn-submit {
-            width: 100%; padding: 1.25rem; background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
-            color: white; border: none; border-radius: 1.25rem; font-size: 1.125rem;
-            font-weight: 800; cursor: pointer; transition: var(--transition);
-            display: flex; align-items: center; justify-content: center; gap: 1rem;
-            margin-top: 1rem; box-shadow: 0 10px 25px rgba(10, 37, 64, 0.3);
+            width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
+            color: white; border: none; border-radius: 1.25rem; font-size: 1rem;
+            font-weight: 700; cursor: pointer; transition: var(--transition);
+            display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+            margin-top: 0.8rem;
             text-transform: uppercase; letter-spacing: 0.05em;
         }
-        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(10, 37, 64, 0.4); }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(10, 37, 64, 0.3); }
 
-        /* Toast notification */
+        /* toast */
         .toast-notify {
-            position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
-            background: var(--brand-primary); color: white; padding: 1rem 2rem;
-            border-radius: 99px; font-weight: 600; z-index: 2000;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2); opacity: 0;
+            position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+            background: var(--brand-primary); color: white; padding: 0.8rem 1.5rem;
+            border-radius: 99px; font-weight: 500; z-index: 2000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); opacity: 0;
             transition: opacity 0.3s ease; pointer-events: none;
+            font-size: 0.9rem; width: 90%; text-align: center;
         }
 
-        /* --- Footer --- */
-        .premium-footer { background: var(--brand-primary); color: white; padding: 4rem 0 3rem; text-align: center; }
-        .footer-bottom p { opacity: 0.5; font-size: 0.875rem; }
+        /* footer */
+        .premium-footer { background: var(--brand-primary); color: white; padding: 3rem 0 2rem; text-align: center; }
+        .footer-bottom p { opacity: 0.6; font-size: 0.75rem; }
 
-        /* --- Mobile --- */
+        /* mobile menu */
         .hamburger { display: none; font-size: 2rem; color: white; background: none; border: none; cursor: pointer; }
         .mobile-panel { position: fixed; top: 0; right: -320px; width: 300px; height: 100vh; background: var(--brand-primary); z-index: 1500; padding: 4rem 2rem; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: -10px 0 40px rgba(0,0,0,0.4); }
         .mobile-panel.active { right: 0; }
         .close-menu { position: absolute; top: 1.5rem; right: 1.5rem; color: white; background: none; border: none; font-size: 2rem; cursor: pointer; }
         .mobile-links { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
-        .mobile-links a { color: white; text-decoration: none; font-size: 1.25rem; font-weight: 700; padding: 1rem; border-radius: 1rem; }
+        .mobile-links a { color: white; text-decoration: none; font-size: 1.2rem; font-weight: 700; padding: 0.8rem; border-radius: 1rem; display: block; }
         .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; visibility: hidden; z-index: 1400; transition: var(--transition); }
         .menu-overlay.active { opacity: 1; visibility: visible; }
 
+        /* Tablet and up */
+        @media (min-width: 768px) {
+            .section { padding: 6rem 0; }
+            .contact-grid { grid-template-columns: 1fr 2fr; gap: 3rem; }
+            .info-card { padding: 2rem; gap: 1.5rem; }
+            .info-card i { width: 60px; height: 60px; font-size: 1.75rem; }
+            .info-card h4 { font-size: 1.25rem; }
+            .info-card p, .info-card .contact-link { font-size: 0.9rem; }
+            .message-oracle-card { padding: 2.5rem; }
+            .message-oracle-card h2 { font-size: 2rem; margin-bottom: 2rem; }
+            .form-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .col-span-2 { grid-column: span 2; }
+            .premium-input, .premium-textarea { padding: 1rem 1.25rem; font-size: 1rem; }
+            .btn-submit { padding: 1.1rem; font-size: 1rem; }
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid { gap: 4rem; }
+            .message-oracle-card { padding: 3rem; }
+        }
+
+        /* desktop nav */
         @media (max-width: 992px) {
             .desktop-menu { display: none; }
             .hamburger { display: block; }
-            .contact-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 640px) {
-            .message-oracle-card { padding: 2.5rem 1.5rem; }
-            .form-grid { grid-template-columns: 1fr; }
-            .col-span-2 { grid-column: span 1; }
         }
     </style>
 </head>
@@ -236,7 +267,7 @@
         <div class="container">
             <div class="contact-grid">
                 <div class="info-cards">
-                    <!-- Address Card (static) -->
+                    <!-- Address -->
                     <div class="info-card">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
@@ -244,7 +275,7 @@
                             <p>P.O. BOX 15, Obom Road, Kasoa, Ghana</p>
                         </div>
                     </div>
-                    <!-- Phone Card with clickable dialer (tel:) -->
+                    <!-- Phone - opens dialer -->
                     <div class="info-card">
                         <i class="fa-solid fa-phone"></i>
                         <div>
@@ -254,7 +285,7 @@
                             </p>
                         </div>
                     </div>
-                    <!-- Email Card with mailto: (opens Gmail / default client) -->
+                    <!-- Email - opens Gmail / mail client -->
                     <div class="info-card">
                         <i class="fa-solid fa-envelope"></i>
                         <div>
@@ -268,13 +299,11 @@
 
                 <div class="message-oracle-card">
                     <h2>Send a Message</h2>
-                    <!-- Form linked to our email (chrisrealinternationalschool@gmail.com) using FormSubmit -->
+                    <!-- Form sends to school email using FormSubmit -->
                     <form id="contactForm" action="https://formsubmit.co/chrisrealinternationalschool@gmail.com" method="POST">
-                        <!-- FormSubmit configuration: avoid captcha, table template, custom subject -->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_subject" value="New Contact Message - CHRISREAL Website">
-                        <!-- Redirect back to contact page with success indicator -->
                         <input type="hidden" name="_next" value="https://chrisreal.edu.gh/contact.html?sent=true">
                         
                         <div class="form-grid">
@@ -285,7 +314,7 @@
                                 <input type="email" class="premium-input" name="email" placeholder="Verified Email Address" required>
                             </div>
                             <div class="input-group col-span-2">
-                                <textarea class="premium-textarea" name="message" rows="6" placeholder="How may we assist you today?" required></textarea>
+                                <textarea class="premium-textarea" name="message" rows="5" placeholder="How may we assist you today?" required></textarea>
                             </div>
                         </div>
                         <button type="submit" class="btn-submit" id="submitBtn">
@@ -306,7 +335,6 @@
         </div>
     </footer>
 
-    <!-- Toast notification for form feedback -->
     <div id="toastMessage" class="toast-notify">Your message has been sent successfully. We'll reply shortly.</div>
 
     <script>
@@ -319,31 +347,33 @@
             const contactForm = document.getElementById('contactForm');
             const toast = document.getElementById('toastMessage');
 
-            // Scroll effect
+            // Scroll navbar effect
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                if (window.scrollY > 30) navbar.classList.add('scrolled');
                 else navbar.classList.remove('scrolled');
             });
 
-            // Mobile menu
+            // Mobile menu open/close
             hamburger.addEventListener('click', () => {
                 mobilePanel.classList.add('active');
                 menuOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
 
-            [closeMenu, menuOverlay].forEach(el => el.addEventListener('click', () => {
+            const closeMobile = () => {
                 mobilePanel.classList.remove('active');
                 menuOverlay.classList.remove('active');
                 document.body.style.overflow = '';
-            }));
+            };
+            closeMenu.addEventListener('click', closeMobile);
+            menuOverlay.addEventListener('click', closeMobile);
 
-            // Handle contact form submission via AJAX (no redirect, better UX)
+            // Form submission via AJAX (no redirect, mobile friendly)
             if (contactForm) {
                 contactForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     const submitBtn = document.getElementById('submitBtn');
-                    const originalHTML = submitBtn.innerHTML;
+                    const originalText = submitBtn.innerHTML;
                     submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
                     submitBtn.disabled = true;
 
@@ -357,22 +387,22 @@
                             toast.style.opacity = '1';
                             setTimeout(() => { toast.style.opacity = '0'; }, 5000);
                             contactForm.reset();
-                            // Smooth scroll to toast
+                            // smooth scroll to toast
                             toast.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         } else {
-                            alert('Message delivery failed. Please try again or call us directly.');
+                            alert('Delivery failed. Please try again or call us directly.');
                         }
                     } catch (err) {
                         console.error(err);
                         alert('Network error. Please check your connection.');
                     } finally {
-                        submitBtn.innerHTML = originalHTML;
+                        submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
                     }
                 });
             }
 
-            // If URL contains ?sent=true (from redirect fallback), show toast
+            // Show toast if redirected with success param
             if (window.location.search.includes('sent=true')) {
                 toast.style.opacity = '1';
                 setTimeout(() => { toast.style.opacity = '0'; }, 6000);
