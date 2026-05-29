@@ -3,8 +3,8 @@
 <head>
     <link rel="stylesheet" href="assets/css/styles.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Contact Us | CHRISREAL INTERNATIONAL SCHOOL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRISREAL | Excellence in Institutional Education</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="image/favicon.ico">
@@ -25,6 +25,7 @@
         :root {
             --brand-primary: #0a2540;
             --brand-primary-dark: #06182c;
+            --brand-primary-light: #133b63;
             --brand-accent: #c9a227;
             --brand-accent-hover: #e0b62d;
             --text-main: #1e293b;
@@ -60,7 +61,11 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .navbar.scrolled { background: rgba(10, 37, 64, 0.98); padding: 0.5rem 0; box-shadow: var(--shadow-premium); }
+        .navbar.scrolled {
+            background: rgba(10, 37, 64, 0.98);
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow-premium);
+        }
 
         .navbar .container {
             width: min(92%, 1400px);
@@ -72,176 +77,161 @@
         }
 
         .logo {
-            display: flex; align-items: center; gap: 0.75rem;
+            display: flex;
+            align-items: center; gap: 0.75rem;
             color: white; font-weight: 800; font-size: 1.5rem;
-            text-decoration: none;
+            text-decoration: none; letter-spacing: -0.025em;
         }
+
         .logo img { height: 50px; border-radius: 50%; border: 2px solid var(--brand-accent); }
 
         .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+
         .nav-links a {
             color: rgba(255, 255, 255, 0.8); text-decoration: none;
             font-weight: 600; font-size: 0.9375rem; transition: var(--transition);
+            position: relative; padding: 0.5rem 0;
         }
+
         .nav-links a:hover, .nav-links a.active { color: var(--brand-accent); }
 
-        /* --- Hero - optimized for mobile height --- */
-        .hero-sub {
-            min-height: 40vh;
-            height: auto;
-            padding: 7rem 1.5rem 4rem;
-            background: linear-gradient(rgba(10,37,64,0.75), rgba(10,37,64,0.6)), url('image/background.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-        .hero-sub h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(2rem, 8vw, 3.5rem); 
-            font-weight: 800; 
-            animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1);
-            line-height: 1.2;
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--brand-accent); transition: var(--transition);
         }
 
-        @keyframes heroReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-        /* --- Content Section - mobile first improvements --- */
-        .section { padding: 5rem 0; }
-        .container { width: min(92%, 1200px); margin: auto; }
-
-        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
-
-        /* info cards */
-        .info-cards { display: flex; flex-direction: column; gap: 1.5rem; }
-
-        .info-card {
-            background: white; border-radius: 1.25rem; padding: 1.5rem;
-            box-shadow: var(--shadow-premium); border: 1px solid rgba(0,0,0,0.03);
-            transition: var(--transition); display: flex; gap: 1rem; align-items: center;
+        .portal-btn {
+            background: var(--brand-accent); color: var(--brand-primary) !important;
+            padding: 0.75rem 1.5rem !important; border-radius: 99px;
+            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
         }
 
-        .info-card i { 
-            font-size: 1.5rem; color: var(--brand-accent); background: var(--bg-light); 
-            width: 50px; height: 50px; border-radius: 1rem; display: flex; align-items: center; 
-            justify-content: center; flex-shrink: 0;
+        .portal-btn:hover { background: var(--brand-accent-hover) !important; transform: translateY(-2px); }
+
+        /* --- Cinematic Hero --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10,37,64,0.65), rgba(10,37,64,0.4)), url('image/background.jpg') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 0 1.5rem;
+            position: relative;
         }
 
-        .info-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--brand-primary); margin-bottom: 0.25rem; }
-        .info-card p, .info-card .contact-link { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; word-break: break-word; }
-        .contact-link { color: var(--text-muted); text-decoration: none; transition: var(--transition); display: inline-block; }
-        .contact-link:hover { color: var(--brand-accent); transform: translateX(3px); }
+        .hero-content { max-width: 900px; animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
 
-        /* message form card */
-        .message-oracle-card {
-            background: white; border-radius: 1.5rem; padding: 2rem 1.5rem;
-            box-shadow: var(--shadow-premium); border: 1px solid rgba(0,0,0,0.03);
+        @keyframes heroReveal {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .message-oracle-card h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 1.8rem; 
-            color: var(--brand-primary); 
-            margin-bottom: 1.5rem; 
-            text-align: center; 
+        .hero h1 {
+            font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800;
         }
 
-        .form-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
-        .col-span-2 { grid-column: span 1; }
+        .hero p { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 500; opacity: 0.9; margin-bottom: 2.5rem; letter-spacing: 0.05em; text-transform: uppercase; }
 
-        .premium-input, .premium-textarea {
-            width: 100%; padding: 0.9rem 1rem; border-radius: 1rem;
-            border: 2px solid #e2e8f0; background-color: #f8fafc;
-            font-family: inherit; font-size: 0.95rem; transition: var(--transition); outline: none;
-            color: var(--brand-primary); font-weight: 500;
+        .hero-actions { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn-premium {
+            padding: 1.125rem 2.5rem; border-radius: 99px; font-weight: 800;
+            text-decoration: none; transition: var(--transition); font-size: 1rem;
+            display: inline-flex; align-items: center; gap: 0.75rem;
         }
 
-        .premium-input:focus, .premium-textarea:focus {
-            border-color: var(--brand-accent); background-color: white;
-            box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.1);
+        .btn-solid { background: var(--brand-accent); color: var(--brand-primary); box-shadow: 0 10px 25px rgba(201, 162, 39, 0.4); }
+        .btn-solid:hover { background: var(--brand-accent-hover); transform: translateY(-3px); }
+
+        .btn-outline { border: 2px solid rgba(255, 255, 255, 0.4); color: white; backdrop-filter: blur(10px); }
+        .btn-outline:hover { background: white; color: var(--brand-primary); transform: translateY(-3px); }
+
+        /* --- Sections --- */
+        .section { padding: 8rem 0; }
+
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 5rem; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--brand-primary); margin-bottom: 1rem; }
+        .section-header p { color: var(--text-muted); font-size: 1.125rem; }
+
+        /* --- Premium Feature Grid --- */
+        .premium-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+
+        .feature-card {
+            background: white; border-radius: var(--radius-premium); overflow: hidden;
+            box-shadow: var(--shadow-premium); transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03); position: relative;
         }
 
-        .btn-submit {
-            width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
-            color: white; border: none; border-radius: 1.25rem; font-size: 1rem;
-            font-weight: 700; cursor: pointer; transition: var(--transition);
-            display: flex; align-items: center; justify-content: center; gap: 0.75rem;
-            margin-top: 0.8rem;
-            text-transform: uppercase; letter-spacing: 0.05em;
-        }
-        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(10, 37, 64, 0.3); }
+        .feature-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-hover); }
 
-        /* toast */
-        .toast-notify {
-            position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
-            background: var(--brand-primary); color: white; padding: 0.8rem 1.5rem;
-            border-radius: 99px; font-weight: 500; z-index: 2000;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2); opacity: 0;
-            transition: opacity 0.3s ease; pointer-events: none;
-            font-size: 0.9rem; width: 90%; text-align: center;
+        .card-img-wrapper { height: 260px; overflow: hidden; position: relative; }
+        .feature-card img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .feature-card:hover img { transform: scale(1.1); }
+
+        .card-content { padding: 2.5rem; }
+        .card-content h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--brand-primary); margin-bottom: 1rem; }
+        .card-content p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+
+        .card-badge {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            background: var(--brand-accent); color: var(--brand-primary);
+            padding: 0.5rem 1rem; border-radius: 99px; font-weight: 800; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 0.05em; z-index: 10;
         }
 
-        /* footer */
-        .premium-footer { background: var(--brand-primary); color: white; padding: 3rem 0 2rem; text-align: center; }
-        .footer-bottom p { opacity: 0.6; font-size: 0.75rem; }
-
-        /* mobile menu */
+        /* --- Hamburger & Mobile --- */
         .hamburger { display: none; font-size: 2rem; color: white; background: none; border: none; cursor: pointer; }
-        .mobile-panel { position: fixed; top: 0; right: -320px; width: 300px; height: 100vh; background: var(--brand-primary); z-index: 1500; padding: 4rem 2rem; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: -10px 0 40px rgba(0,0,0,0.4); }
+
+        .mobile-panel {
+            position: fixed; top: 0; right: -320px; width: 300px; height: 100vh;
+            background: var(--brand-primary); z-index: 1500; padding: 4rem 2rem;
+            transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: -10px 0 40px rgba(0,0,0,0.4);
+        }
+
         .mobile-panel.active { right: 0; }
+
         .close-menu { position: absolute; top: 1.5rem; right: 1.5rem; color: white; background: none; border: none; font-size: 2rem; cursor: pointer; }
+
         .mobile-links { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
-        .mobile-links a { color: white; text-decoration: none; font-size: 1.2rem; font-weight: 700; padding: 0.8rem; border-radius: 1rem; display: block; }
+        .mobile-links a { color: white; text-decoration: none; font-size: 1.25rem; font-weight: 700; padding: 1rem; border-radius: 1rem; transition: var(--transition); }
+        .mobile-links a:hover { background: rgba(255, 255, 255, 0.05); color: var(--brand-accent); }
+
         .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; visibility: hidden; z-index: 1400; transition: var(--transition); }
         .menu-overlay.active { opacity: 1; visibility: visible; }
 
-        /* Tablet and up */
-        @media (min-width: 768px) {
-            .section { padding: 6rem 0; }
-            .contact-grid { grid-template-columns: 1fr 2fr; gap: 3rem; }
-            .info-card { padding: 2rem; gap: 1.5rem; }
-            .info-card i { width: 60px; height: 60px; font-size: 1.75rem; }
-            .info-card h4 { font-size: 1.25rem; }
-            .info-card p, .info-card .contact-link { font-size: 0.9rem; }
-            .message-oracle-card { padding: 2.5rem; }
-            .message-oracle-card h2 { font-size: 2rem; margin-bottom: 2rem; }
-            .form-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-            .col-span-2 { grid-column: span 2; }
-            .premium-input, .premium-textarea { padding: 1rem 1.25rem; font-size: 1rem; }
-            .btn-submit { padding: 1.1rem; font-size: 1rem; }
-        }
-
-        @media (min-width: 1024px) {
-            .contact-grid { gap: 4rem; }
-            .message-oracle-card { padding: 3rem; }
-        }
-
-        /* desktop nav */
         @media (max-width: 992px) {
             .desktop-menu { display: none; }
             .hamburger { display: block; }
+            .section { padding: 5rem 0; }
+        }
+
+        @media (max-width: 640px) {
+            .hero-actions { flex-direction: column; }
+            .btn-premium { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar" id="navbar">
-        <div class="container" style="max-width: 1400px;">
+        <div class="container">
             <a href="index.html" class="logo">
                 <img src="image/chrisreallogo.jpg" alt="CHRISREAL">
                 <span>CHRISREAL</span>
             </a>
+
             <ul class="nav-links desktop-menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="life.html">School Life</a></li>
                 <li><a href="admission.html">Admissions</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="http://chrisreal.page.gd/login.php">Parent Portal</a></li>
             </ul>
-             <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+
+            <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
 
@@ -249,93 +239,121 @@
     <div class="mobile-panel" id="mobilePanel">
         <button class="close-menu" id="closeMenu">✕</button>
         <ul class="mobile-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="life.html">School Life</a></li>
             <li><a href="admission.html">Admissions</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <li><a href="http://chrisreal.page.gd/login.php">Parent Portal</a></li>
         </ul>
     </div>
 
-    <header class="hero-sub">
-        <h1>Connect With Us</h1>
+    <header class="hero">
+        <div class="hero-content">
+            <p>ESTABLISHED IN EXCELLENCE</p>
+            <h1>Nurturing the Leaders of Tomorrow</h1>
+            <div class="hero-actions">
+                <a href="admission.html" class="btn-premium btn-solid">
+                    Apply for Admission <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="about.html" class="btn-premium btn-outline">
+                    Discover Our Vision
+                </a>
+            </div>
+        </div>
     </header>
 
     <section class="section">
         <div class="container">
-            <div class="contact-grid">
-                <div class="info-cards">
-                    <!-- Address -->
-                    <div class="info-card">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <h4>Visit Us</h4>
-                            <p>P.O. BOX 15, Obom Road, Kasoa, Ghana</p>
-                        </div>
+            <div class="section-header">
+                <h2>The CHRISREAL Advantage</h2>
+                <p>We provide a comprehensive academic environment designed to foster critical thinking, creativity, and ethical leadership in every student.</p>
+            </div>
+
+            <div class="premium-grid">
+                <div class="feature-card">
+                    <span class="card-badge">Academic</span>
+                    <div class="card-img-wrapper">
+                        <img src="image/academic.jpg" alt="Academics">
                     </div>
-                    <!-- Phone - opens dialer -->
-                    <div class="info-card">
-                        <i class="fa-solid fa-phone"></i>
-                        <div>
-                            <h4>Call Us</h4>
-                            <p>
-                                <a href="tel:+2335588640667" class="contact-link">+233 558 864 0667</a>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Email - opens Gmail / mail client -->
-                    <div class="info-card">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div>
-                            <h4>Email Us</h4>
-                            <p>
-                                <a href="mailto:chrisrealinternationalschool@gmail.com" class="contact-link">chrisrealinternationalschool@gmail.com</a>
-                            </p>
-                        </div>
+                    <div class="card-content">
+                        <h3>World-Class Faculty</h3>
+                        <p>Our educators are more than just teachers—they are mentors dedicated to unlocking the full potential of every constituent.</p>
                     </div>
                 </div>
 
-                <div class="message-oracle-card">
-                    <h2>Send a Message</h2>
-                    <!-- Form sends to school email using FormSubmit -->
-                    <form id="contactForm" action="https://formsubmit.co/chrisrealinternationalschool@gmail.com" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_subject" value="New Contact Message - CHRISREAL Website">
-                        <input type="hidden" name="_next" value="https://chrisreal.edu.gh/contact.html?sent=true">
-                        
-                        <div class="form-grid">
-                            <div class="input-group">
-                                <input type="text" class="premium-input" name="name" placeholder="Your Full Identity" required>
-                            </div>
-                            <div class="input-group">
-                                <input type="email" class="premium-input" name="email" placeholder="Verified Email Address" required>
-                            </div>
-                            <div class="input-group col-span-2">
-                                <textarea class="premium-textarea" name="message" rows="5" placeholder="How may we assist you today?" required></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn-submit" id="submitBtn">
-                            Transmit Message
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-                    </form>
+                <div class="feature-card">
+                    <span class="card-badge">Infrastructure</span>
+                    <div class="card-img-wrapper">
+                        <img src="image/campus.jpg" alt="Campus">
+                    </div>
+                    <div class="card-content">
+                        <h3>Modern Campus</h3>
+                        <p>State-of-the-art facilities designed to provide a safe, stimulating, and technologically advanced learning environment.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <span class="card-badge">Holistic</span>
+                    <div class="card-img-wrapper">
+                        <img src="image/event.jpg" alt="Activities">
+                    </div>
+                    <div class="card-content">
+                        <h3>Future-Ready Skills</h3>
+                        <p>Beyond the classroom, we focus on character building, athletic excellence, and the soft skills required for the 21st century.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="premium-footer">
+    <!-- Premium Footer (as requested) -->
+    <footer class="premium-footer" style="background: var(--brand-primary); color: white; padding: 3rem 0 2rem; text-align: center;">
         <div class="container">
+            <div class="footer-exact" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: left; margin-bottom: 3rem;">
+                <!-- Column 1: FOLLOW US -->
+                <div class="footer-col">
+                    <h3 style="color: var(--brand-accent); margin-bottom: 1rem; font-size: 1rem;">FOLLOW US</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Facebook</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">X (Twitter)</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">Instagram</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none;">TIKTOK</a></li>
+                    </ul>
+                </div>
+                <!-- Column 2: INSTITUTIONAL -->
+                <div class="footer-col">
+                    <h3 style="color: var(--brand-accent); margin-bottom: 1rem; font-size: 1rem;">INSTITUTIONAL</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Our Story</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="life.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Campus Life</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="admission.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Admissions</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="http://chrisreal.page.gd/login.php" style="color: rgba(255,255,255,0.7); text-decoration: none;">Parent Intelligence Portal</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: CONNECT -->
+                <div class="footer-col">
+                    <h3 style="color: var(--brand-accent); margin-bottom: 1rem; font-size: 1rem;">CONNECT</h3>
+                    <div style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;">
+                        <span>📍</span>
+                        <span style="color: rgba(255,255,255,0.7);">P.O. BOX 15, Obom Road, Kasoa, Ghana</span>
+                    </div>
+                    <div style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;">
+                        <span>📞</span>
+                        <a href="tel:+2335588640667" style="color: rgba(255,255,255,0.7); text-decoration: none;">+233 558 864 0667</a>
+                    </div>
+                    <div style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem;">
+                        <span>📧</span>
+                        <a href="mailto:chrisrealinternationalschool@gmail.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">chrisrealinternationalschool@gmail.com</a>
+                    </div>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL &bull; Institutional Data Management Environment</p>
+                <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL • Institutional Data Management Environment</p>
             </div>
         </div>
     </footer>
-
-    <div id="toastMessage" class="toast-notify">Your message has been sent successfully. We'll reply shortly.</div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -344,72 +362,31 @@
             const mobilePanel = document.getElementById('mobilePanel');
             const menuOverlay = document.getElementById('menuOverlay');
             const closeMenu = document.getElementById('closeMenu');
-            const contactForm = document.getElementById('contactForm');
-            const toast = document.getElementById('toastMessage');
 
-            // Scroll navbar effect
+            // Scroll effect
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 30) navbar.classList.add('scrolled');
-                else navbar.classList.remove('scrolled');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             });
 
-            // Mobile menu open/close
-            hamburger.addEventListener('click', () => {
+            function openMenu() {
                 mobilePanel.classList.add('active');
                 menuOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
-            });
+            }
 
-            const closeMobile = () => {
+            function closeMobileMenu() {
                 mobilePanel.classList.remove('active');
                 menuOverlay.classList.remove('active');
                 document.body.style.overflow = '';
-            };
-            closeMenu.addEventListener('click', closeMobile);
-            menuOverlay.addEventListener('click', closeMobile);
-
-            // Form submission via AJAX (no redirect, mobile friendly)
-            if (contactForm) {
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    const submitBtn = document.getElementById('submitBtn');
-                    const originalText = submitBtn.innerHTML;
-                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-                    submitBtn.disabled = true;
-
-                    const formData = new FormData(contactForm);
-                    try {
-                        const response = await fetch('https://formsubmit.co/ajax/chrisrealinternationalschool@gmail.com', {
-                            method: 'POST',
-                            body: formData
-                        });
-                        if (response.ok) {
-                            toast.style.opacity = '1';
-                            setTimeout(() => { toast.style.opacity = '0'; }, 5000);
-                            contactForm.reset();
-                            // smooth scroll to toast
-                            toast.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        } else {
-                            alert('Delivery failed. Please try again or call us directly.');
-                        }
-                    } catch (err) {
-                        console.error(err);
-                        alert('Network error. Please check your connection.');
-                    } finally {
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                    }
-                });
             }
 
-            // Show toast if redirected with success param
-            if (window.location.search.includes('sent=true')) {
-                toast.style.opacity = '1';
-                setTimeout(() => { toast.style.opacity = '0'; }, 6000);
-                const cleanUrl = new URL(window.location);
-                cleanUrl.searchParams.delete('sent');
-                window.history.replaceState({}, document.title, cleanUrl.pathname);
-            }
+            hamburger.addEventListener('click', openMenu);
+            closeMenu.addEventListener('click', closeMobileMenu);
+            menuOverlay.addEventListener('click', closeMobileMenu);
         });
     </script>
 </body>
