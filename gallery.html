@@ -118,9 +118,92 @@
         .overlay-content h4 { color: white; font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 0.25rem; }
         .overlay-content p { color: var(--brand-accent); font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
 
-        /* --- Footer --- */
-        .premium-footer { background: var(--brand-primary); color: white; padding: 4rem 0 3rem; text-align: center; }
-        .footer-bottom p { opacity: 0.5; font-size: 0.875rem; }
+        /* ========== PREMIUM FOOTER WITH ICON BUTTONS (matching all other pages) ========== */
+        .premium-footer {
+            background: var(--brand-primary);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--brand-accent);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+            transform: translateX(3px);
+        }
+
+        /* Premium Icon Buttons for phone/email/directions */
+        .footer-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.6rem 1rem;
+            border-radius: 2rem;
+            margin-bottom: 0.75rem;
+            transition: var(--transition);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            width: fit-content;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-action-btn i {
+            color: var(--brand-accent);
+            font-size: 1rem;
+        }
+
+        .footer-action-btn:hover {
+            background: var(--brand-accent);
+            color: var(--brand-primary);
+            transform: translateY(-2px);
+            border-color: var(--brand-accent);
+        }
+
+        .footer-action-btn:hover i {
+            color: var(--brand-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 0.75rem;
+        }
 
         /* --- Mobile --- */
         .hamburger { display: none; font-size: 2rem; color: white; background: none; border: none; cursor: pointer; }
@@ -136,6 +219,8 @@
             .desktop-menu { display: none; }
             .hamburger { display: block; }
             .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .footer-action-btn { margin-left: auto; margin-right: auto; }
         }
     </style>
 </head>
@@ -244,10 +329,59 @@
         </div>
     </section>
 
+    <!-- PREMIUM FOOTER with Icon Buttons (matching all other pages) -->
     <footer class="premium-footer">
         <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: FOLLOW US -->
+                <div class="footer-col">
+                    <h3>FOLLOW US</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">X (Twitter)</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TIKTOK</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: INSTITUTIONAL -->
+                <div class="footer-col">
+                    <h3>INSTITUTIONAL</h3>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="life.html">Campus Life</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="http://chrisreal.page.gd/login.php">Parent Intelligence Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: CONNECT with Premium Icon Buttons + Get Directions -->
+                <div class="footer-col">
+                    <h3>CONNECT</h3>
+                    <!-- Address line (static) -->
+                    <div style="margin-bottom: 0.75rem; display: flex; gap: 0.5rem; align-items: center;">
+                        <i class="fa-solid fa-location-dot" style="color: var(--brand-accent);"></i>
+                        <span style="color: rgba(255,255,255,0.7);">P.O. BOX 15, Obom Road, Kasoa, Ghana</span>
+                    </div>
+                    <!-- Phone Button (opens dialer) -->
+                    <a href="tel:+2335588640667" class="footer-action-btn">
+                        <i class="fa-solid fa-phone"></i> +233 558 864 0667
+                    </a>
+                    <!-- Email Button (opens Gmail/mail client) -->
+                    <a href="mailto:chrisrealinternationalschool@gmail.com" class="footer-action-btn">
+                        <i class="fa-solid fa-envelope"></i> chrisrealinternationalschool@gmail.com
+                    </a>
+                    <!-- Get Directions Button (Google Maps) -->
+                    <a href="https://maps.google.com/maps?q=5.5437951%2C-0.4225256&z=17&hl=en" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="footer-action-btn">
+                        <i class="fa-solid fa-map-pin"></i> Get Directions
+                    </a>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL &bull; Institutional Data Management Environment</p>
+                <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL • Institutional Data Management Environment</p>
             </div>
         </div>
     </footer>
