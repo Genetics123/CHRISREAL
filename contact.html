@@ -133,7 +133,7 @@
         .contact-link { color: var(--text-muted); text-decoration: none; transition: var(--transition); display: inline-block; }
         .contact-link:hover { color: var(--brand-accent); transform: translateX(3px); }
 
-        /* --- Direction Button Styles --- */
+        /* --- Direction Button --- */
         .direction-btn {
             display: inline-flex;
             align-items: center;
@@ -214,7 +214,7 @@
             font-size: 0.9rem; width: 90%; text-align: center;
         }
 
-        /* footer */
+        /* --- Footer (identical to index.html) --- */
         .premium-footer { background: var(--brand-primary); color: white; padding: 3rem 0 2rem; text-align: center; }
         .footer-bottom p { opacity: 0.6; font-size: 0.75rem; }
 
@@ -303,13 +303,12 @@
         <div class="container">
             <div class="contact-grid">
                 <div class="info-cards">
-                    <!-- Address with Direction Button -->
+                    <!-- Address with Direction Button (Google Maps link) -->
                     <div class="info-card">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
                             <h4>Visit Us</h4>
                             <p>P.O. BOX 15, Obom Road, Kasoa, Ghana</p>
-                            <!-- Google Maps Direction Button -->
                             <a href="https://maps.google.com/maps?q=5.5437951%2C-0.4225256&z=17&hl=en" 
                                target="_blank" 
                                rel="noopener noreferrer" 
@@ -370,7 +369,7 @@
         </div>
     </section>
 
-    <!-- Premium Footer -->
+    <!-- Footer identical to index.html -->
     <footer class="premium-footer">
         <div class="container">
             <div class="footer-exact" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: left; margin-bottom: 3rem;">
@@ -469,7 +468,6 @@
                             toast.style.opacity = '1';
                             setTimeout(() => { toast.style.opacity = '0'; }, 5000);
                             contactForm.reset();
-                            // smooth scroll to toast
                             toast.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         } else {
                             alert('Delivery failed. Please try again or call us directly.');
