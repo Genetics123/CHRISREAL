@@ -231,7 +231,7 @@
             transform: translateX(5px);
         }
 
-        /* contact lines with emoji (matches image exactly: 📍, 📞, 📧) */
+        /* contact lines with emoji and clickable links */
         .contact-line {
             display: flex;
             align-items: flex-start;
@@ -244,6 +244,16 @@
         .contact-emoji {
             font-size: 1rem;
             min-width: 1.4rem;
+        }
+        /* make contact links inherit color and style */
+        .contact-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .contact-link:hover {
+            color: white;
+            transform: translateX(3px);
         }
 
         /* copyright */
@@ -397,7 +407,7 @@
         </div>
     </section>
 
-    <!-- EXACT FOOTER: FOLLOW US (vertical) | INSTITUTIONAL | CONNECT  (matching the image perfectly) -->
+    <!-- EXACT FOOTER: FOLLOW US | INSTITUTIONAL | CONNECT  (with clickable WhatsApp & Email) -->
     <footer class="premium-footer">
         <div class="container">
             <div class="footer-exact">
@@ -412,7 +422,7 @@
                     </ul>
                 </div>
 
-                <!-- Column 2: INSTITUTIONAL (exactly as per image) -->
+                <!-- Column 2: INSTITUTIONAL -->
                 <div class="footer-col">
                     <h3>INSTITUTIONAL</h3>
                     <ul>
@@ -423,7 +433,7 @@
                     </ul>
                 </div>
 
-                <!-- Column 3: CONNECT (with emojis exactly: 📍 📞 📧) -->
+                <!-- Column 3: CONNECT with clickable phone (WhatsApp) and email (Gmail) -->
                 <div class="footer-col">
                     <h3>CONNECT</h3>
                     <div class="contact-line">
@@ -432,11 +442,17 @@
                     </div>
                     <div class="contact-line">
                         <span class="contact-emoji">📞</span>
-                        <span>+233 558 864 0667</span>
+                        <!-- Phone number: opens WhatsApp chat (you can also use tel: but WhatsApp is specified) -->
+                        <a href="https://wa.me/2335588640667" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            +233 558 864 0667
+                        </a>
                     </div>
                     <div class="contact-line">
                         <span class="contact-emoji">📧</span>
-                        <span>chrisrealinternationalschool@gmail.com</span>
+                        <!-- Email: opens default mail client (Gmail if configured) -->
+                        <a href="mailto:chrisrealinternationalschool@gmail.com" class="contact-link">
+                            chrisrealinternationalschool@gmail.com
+                        </a>
                     </div>
                 </div>
             </div>
