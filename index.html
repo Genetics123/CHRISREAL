@@ -180,30 +180,150 @@
             text-transform: uppercase; letter-spacing: 0.05em; z-index: 10;
         }
 
-        /* --- Footer --- */
+        /* ========== SIMPLE FOOTER: VERTICAL SOCIAL + INSTITUTIONAL + CONNECT ========== */
         .premium-footer {
-            background: var(--brand-primary); color: white; padding: 6rem 0 3rem;
+            background: var(--brand-primary);
+            color: white;
+            padding: 5rem 0 2.5rem;
         }
 
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem; margin-bottom: 4rem; }
+        .container {
+            width: min(92%, 1400px);
+            margin: 0 auto;
+        }
 
-        .footer-brand h4 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-        .footer-brand p { opacity: 0.7; font-size: 0.9375rem; max-width: 300px; }
+        .footer-three-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;  /* three equal sections */
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
 
-        .footer-links h5 { font-size: 1.125rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--brand-accent); }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 0.75rem; }
-        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: var(--transition); }
-        .footer-links a:hover { color: white; padding-left: 0.5rem; }
+        /* Vertical social column */
+        .footer-social h5, .footer-institutional h5, .footer-connect h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.6rem;
+            color: var(--brand-accent);
+            letter-spacing: 0.05em;
+            position: relative;
+            display: inline-block;
+        }
+        .footer-social h5:after, .footer-institutional h5:after, .footer-connect h5:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--brand-accent);
+            opacity: 0.6;
+        }
 
-        .footer-contact h5 { font-size: 1.125rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--brand-accent); }
-        .footer-contact p { opacity: 0.7; margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem; }
-        .footer-contact i { color: var(--brand-accent); margin-top: 0.25rem; }
+        /* Vertical stacked social links */
+        .social-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
 
-        .footer-bottom { padding-top: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
-        .footer-bottom p { opacity: 0.5; font-size: 0.875rem; }
+        .social-vertical a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            width: fit-content;
+        }
 
-        /* --- Hamburger & Mobile --- */
+        .social-vertical a i {
+            width: 28px;
+            font-size: 1.3rem;
+            color: var(--brand-accent);
+            transition: var(--transition);
+        }
+
+        .social-vertical a span {
+            letter-spacing: 0.3px;
+        }
+
+        .social-vertical a:hover {
+            transform: translateX(6px);
+            color: white;
+        }
+
+        .social-vertical a:hover i {
+            color: var(--brand-accent-hover);
+            transform: scale(1.05);
+        }
+
+        /* Institutional list styling */
+        .footer-institutional ul, .footer-connect ul {
+            list-style: none;
+        }
+        .footer-institutional li, .footer-connect li {
+            margin-bottom: 0.85rem;
+        }
+        .footer-institutional a, .footer-connect a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        .footer-institutional a:hover, .footer-connect a:hover {
+            color: white;
+            padding-left: 0.5rem;
+            transform: translateX(4px);
+        }
+
+        /* Connect details (address, phone, email) */
+        .contact-block p {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .contact-block i {
+            color: var(--brand-accent);
+            width: 20px;
+            margin-top: 0.2rem;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .footer-three-col {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: left;
+            }
+            .social-vertical a {
+                width: auto;
+            }
+            .footer-social h5:after, .footer-institutional h5:after, .footer-connect h5:after {
+                left: 0;
+            }
+        }
+
+        /* --- Hamburger & Mobile (unchanged) --- */
         .hamburger { display: none; font-size: 2rem; color: white; background: none; border: none; cursor: pointer; }
 
         .mobile-panel {
@@ -233,66 +353,6 @@
             .hero-actions { flex-direction: column; }
             .btn-premium { width: 100%; justify-content: center; }
         }
-      /* --- Enhanced Footer Branding --- */
-.footer-logo {
-    margin-bottom: 1rem;
-}
-.footer-logo img {
-    height: 70px;
-    width: auto;
-    border-radius: 50%;
-    border: 2px solid var(--brand-accent);
-}
-
-.footer-brand h4 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 0.25rem;       /* tighter to the motto */
-    color: white;
-}
-
-.footer-motto {
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--brand-accent);
-    margin-bottom: 1.5rem;
-    opacity: 1;                   /* makes the gold motto pop */
-}
-
-.footer-brand p {
-    opacity: 0.75;
-    font-size: 0.9375rem;
-    max-width: 320px;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-}
-
-/* Social Icons */
-.footer-social {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-.footer-social a {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    transition: var(--transition);
-    font-size: 0.9rem;
-}
-.footer-social a:hover {
-    background: var(--brand-accent);
-    border-color: var(--brand-accent);
-    color: var(--brand-primary);
-}
     </style>
 </head>
 <body>
@@ -391,43 +451,64 @@
         </div>
     </section>
 
+    <!-- SIMPLE, CLEAN FOOTER: Vertical Social (FB, X, etc) + Institutional + Connect (exactly as requested) -->
     <footer class="premium-footer">
-    <div class="container">
-        <div class="footer-grid">
-
-                <!-- Optional social icons (placeholders) -->
+        <div class="container">
+            <div class="footer-three-col">
+                <!-- LEFT COLUMN: VERTICAL SOCIAL (Facebook, X, Instagram, LinkedIn, etc) -->
                 <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <h5>FOLLOW US</h5>
+                    <div class="social-vertical">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" aria-label="X (Twitter)">
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <span>X (Twitter)</span>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MIDDLE COLUMN: INSTITUTIONAL (exactly the menu from image) -->
+                <div class="footer-institutional">
+                    <h5>INSTITUTIONAL</h5>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="life.html">Campus Life</a></li>
+                        <li><a href="admission.html">Admissions</a></li>
+                        <li><a href="http://chrisreal.page.gd/login.php">Parent Intelligence Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- RIGHT COLUMN: CONNECT (address, phone, email as in your reference) -->
+                <div class="footer-connect">
+                    <h5>CONNECT</h5>
+                    <div class="contact-block">
+                        <p><i class="fa-solid fa-location-dot"></i> P.O. BOX 15, Obom Road, Kasoa, Ghana</p>
+                        <p><i class="fa-solid fa-phone"></i> +233 (0) XX XXX XXXX</p>
+                        <p><i class="fa-solid fa-envelope"></i> info@chrisreal.edu.gh</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="footer-links">
-                <h5>Institutional</h5>
-                <ul>
-                    <li><a href="about.html">Our Story</a></li>
-                    <li><a href="life.html">Campus Life</a></li>
-                    <li><a href="admission.html">Admissions</a></li>
-                    <li><a href="../login.php">Parent Intelligence Portal</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>© 2026 CHRISREAL INTERNATIONAL SCHOOL • Institutional Data Management Environment</p>
             </div>
-
-            <div class="footer-contact">
-                <h5>Connect</h5>
-                <p><i class="fa-solid fa-location-dot"></i> P.O. BOX 15, Obom Road, Kasoa, Ghana</p>
-                <p><i class="fa-solid fa-phone"></i> +233 (0) XX XXX XXXX</p>
-                <p><i class="fa-solid fa-envelope"></i> info@chrisreal.edu.gh</p>
-            </div>
-
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 CHRISREAL INTERNATIONAL SCHOOL &bull; Institutional Data Management Environment</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -437,7 +518,6 @@
             const menuOverlay = document.getElementById('menuOverlay');
             const closeMenu = document.getElementById('closeMenu');
 
-            // Scroll effect
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
